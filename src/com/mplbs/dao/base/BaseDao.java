@@ -1,4 +1,4 @@
-package com.srms.dao.base;
+package com.mplbs.dao.base;
 
 import java.io.Serializable;
 import java.util.List;

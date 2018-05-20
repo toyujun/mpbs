@@ -1,4 +1,4 @@
-package com.srms.dao.impl;
+package com.mplbs.dao.impl;
 
 import java.io.Serializable;
 
@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.srms.dao.UserDao;
-import com.srms.dao.base.impl.BaseDaoImpl;
-import com.srms.domain.User;
+import com.mplbs.dao.UserDao;
+import com.mplbs.dao.base.impl.BaseDaoImpl;
+import com.mplbs.domain.User;
 
 @Repository
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {

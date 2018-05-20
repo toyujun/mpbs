@@ -11,7 +11,7 @@
 	<interceptors>
 		<!-- 注册自定义拦截器 -->
 		<interceptor name="bosLoginInterceptor"
-			class="com.srms.action.interceptor.BOSLoginInterceptor">
+			class="com.mplbs.action.interceptor.BOSLoginInterceptor">
 			<!-- 指定哪些方法不需要拦截 -->
 			<param name="excludeMethods">login</param>
 		</interceptor>

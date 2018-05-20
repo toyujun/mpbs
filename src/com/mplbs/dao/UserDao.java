@@ -1,7 +1,7 @@
-package com.srms.dao;
+package com.mplbs.dao;
 
-import com.srms.dao.base.BaseDao;
-import com.srms.domain.User;
+import com.mplbs.dao.base.BaseDao;
+import com.mplbs.domain.User;
 
 public interface UserDao extends BaseDao<User> {
 	User findByPasswordAndUsername(String username,String password);

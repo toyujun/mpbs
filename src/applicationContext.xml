@@ -39,7 +39,7 @@
 		<!-- 注入hibernate的映射文件 -->
 		<property name="mappingLocations">
 			<list>
-				<value>classpath:com/srms/domain/*.xml</value>
+				<value>classpath:com/mplbs/domain/*.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -50,7 +50,7 @@
 	</bean>
 	
 	<!-- 组件扫描 -->
-	<context:component-scan base-package="com.srms"/>
+	<context:component-scan base-package="com.mplbs"/>
 	
 	<!-- 支持spring注解 -->
 	<context:annotation-config/>

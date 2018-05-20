@@ -1,4 +1,4 @@
-package com.srms.dao.base.impl;
+package com.mplbs.dao.base.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
-import com.srms.dao.base.BaseDao;
+import com.mplbs.dao.base.BaseDao;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 	//代表的是某个实体的类型

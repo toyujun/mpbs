@@ -1,6 +1,6 @@
-package com.srms.service;
+package com.mplbs.service;
 
-import com.srms.domain.User;
+import com.mplbs.domain.User;
 
 public interface UserService {
 

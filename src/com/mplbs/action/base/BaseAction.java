@@ -1,4 +1,4 @@
-package com.srms.action.base;
+package com.mplbs.action.base;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

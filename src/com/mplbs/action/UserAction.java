@@ -1,4 +1,4 @@
-package com.srms.action;
+package com.mplbs.action;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
@@ -6,10 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-
-import com.srms.action.base.BaseAction;
-import com.srms.domain.User;
-import com.srms.service.UserService;
+import com.mplbs.action.base.BaseAction;
+import com.mplbs.domain.User;
+import com.mplbs.service.UserService;
 
 
 @Controller

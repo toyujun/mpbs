@@ -1,4 +1,4 @@
-package com.srms.utils;
+package com.mplbs.utils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

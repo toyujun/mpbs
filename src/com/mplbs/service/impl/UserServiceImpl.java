@@ -1,4 +1,4 @@
-package com.srms.service.impl;
+package com.mplbs.service.impl;
 
 
 import javax.annotation.Resource;
@@ -6,10 +6,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.srms.dao.UserDao;
-import com.srms.domain.User;
-import com.srms.service.UserService;
-import com.srms.utils.MD5Utils;
+import com.mplbs.dao.UserDao;
+import com.mplbs.domain.User;
+import com.mplbs.service.UserService;
+import com.mplbs.utils.MD5Utils;
 
 @Service
 @Transactional

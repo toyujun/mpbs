@@ -1,10 +1,10 @@
-package com.srms.utils;
+package com.mplbs.utils;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.srms.domain.User;
+import com.mplbs.domain.User;
 
 
 /**
@@ -12,7 +12,7 @@ import com.srms.domain.User;
  * @author 
  *
  */
-public class BOSUtils {
+public class MPUtils {
 	//获取session对象
 	public static HttpSession getSession(){
 		return ServletActionContext.getRequest().getSession();
