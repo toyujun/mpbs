@@ -13,7 +13,7 @@ public class User implements java.io.Serializable {
 	private String username;
 	private String password;
 	private String nickname;
-	private Integer gender;
+	private String gender;
 	private String email;
 	private String logintype;
 	private String telephone;
@@ -33,7 +33,7 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String id, String username, String password, String nickname, 
-			Integer gender, String email, String logintype, String telephone) {
+			String gender, String email, String logintype, String telephone) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -71,11 +71,11 @@ public class User implements java.io.Serializable {
 		this.password = password;
 	}
 
-	public Integer getGender() {
+	public String getGender() {
 		return this.gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

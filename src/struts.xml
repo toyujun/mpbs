@@ -10,14 +10,14 @@
 	<package name="basicstruts2" extends="struts-default">
 	<interceptors>
 		<!-- 注册自定义拦截器 -->
-		<interceptor name="bosLoginInterceptor"
-			class="com.mplbs.action.interceptor.BOSLoginInterceptor">
+		<interceptor name="mpLoginInterceptor"
+			class="com.mplbs.action.interceptor.MPLoginInterceptor">
 			<!-- 指定哪些方法不需要拦截 -->
 			<param name="excludeMethods">login</param>
 		</interceptor>
 		<!-- 定义拦截器栈 -->
 		<interceptor-stack name="myStack">
-			<interceptor-ref name="bosLoginInterceptor"></interceptor-ref>
+			<interceptor-ref name="mpLoginInterceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</interceptor-stack>
 	</interceptors>
@@ -33,7 +33,7 @@
 		
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="login">/login.jsp</result>
-			<result name="home">/index.jsp</result>
+			<result name="home">WEB-INF/pages/common/index.jsp</result>
 		</action>
 	</package>
 </struts>

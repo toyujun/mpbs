@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mplbs.domain.User" table="t_user">
+    <class name="com.mplbs.domain.User" table="users">
         <id name="id" type="java.lang.String">
             <column name="UserID" length="32" />
             <generator class="assigned" />
@@ -16,14 +16,14 @@
 		<property name="nickname" type="java.lang.String">
             <column name="NickName" length="100" />
         </property>
-        <property name="gender" type="java.lang.Integer">
+        <property name="gender" type="java.lang.String">
             <column name="Sex" length="1" />
         </property>
         <property name="email" type="java.lang.String">
             <column name="Email" length="100" />
         </property>
         <property name="logintype" type="java.lang.String">
-            <column name="LoginType" length="50" />
+            <column name="LoginType" length="1" />
         </property>
         <property name="telephone" type="java.lang.String">
             <column name="Telephone" length="20" />

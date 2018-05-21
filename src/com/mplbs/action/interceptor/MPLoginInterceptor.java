@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 
-public class BOSLoginInterceptor extends MethodFilterInterceptor {
+public class MPLoginInterceptor extends MethodFilterInterceptor {
 	//拦截方法
 	@Override
 	protected String doIntercept(ActionInvocation invocation) throws Exception {

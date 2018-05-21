@@ -30,6 +30,7 @@
 	}
 	// generate a random code
 	String capstr = hash1.substring(0, 4);
+	//将验证码保存到session域对象中
 	session.setAttribute("key", capstr);
 	g.setColor(new Color(0, 100, 0));
 	g.setFont(new Font("Candara", Font.BOLD, 24));

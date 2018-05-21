@@ -57,4 +57,12 @@ public class UserAction extends BaseAction<User> {
 		ServletActionContext.getRequest().getSession().invalidate();
 		return LOGIN;
 	}
+	/**
+	 * 用户注册
+	 */
+	public String register() {
+		userService.save(model);
+		return HOME;
+			
+	}
 }

@@ -28,4 +28,10 @@ public class UserServiceImpl implements UserService {
 		return user1;
 	}
 
+	@Override
+	public void save(User model) {
+		// TODO Auto-generated method stub
+		userDao.save(model);
+	}
+
 }

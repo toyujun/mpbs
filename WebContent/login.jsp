@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,7 +28,6 @@
 <script
 	src="${pageContext.request.contextPath }/js/easyui/locale/easyui-lang-zh_CN.js"
 	type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -51,13 +51,24 @@
 			<img id="loginform:vCode" src="${pageContext.request.contextPath }/validatecode.jsp"
 									onclick="javascript:document.getElementById('loginform:vCode').src='${pageContext.request.contextPath }/validatecode.jsp?'+Math.random();" />
 		</div>	
-		<div>
-		<a onclick="document.getElementById('loginform').submit();" href="#" id="loginform:j_id19" name="loginform:j_id19"">
+		<div id="loginBtn" style="width: 280px; margin-left: 780px;">
+		<a onclick="document.getElementById('loginform').submit();" href="#" id="loginform:j_id19" name="loginform:j_id19">
 		<span id="loginform:loginBtn" class="btn btn-login">登录</span>
-		
-		</div>
-			
 		</a>
+		</div>
+		
+		<div id="regBtn" style="width: 280px; margin-left: 780px;">
+		<a href="${pageContext.request.contextPath }/register.jsp" id="regBtnlink">
+		<span id="regBtn" class="btn btn-reg">注册</span>
+		</a>
+		</div>
+		
+		<div align="center">
+			<br/>
+			<font  color="red">
+				<s:actionerror/>
+			</font>
+		</div>
 
 	</form>
 </body>
