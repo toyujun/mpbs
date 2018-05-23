@@ -62,7 +62,8 @@ public class UserAction extends BaseAction<User> {
 	 */
 	public String register() {
 		userService.save(model);
-		return HOME;
+		this.addActionError("注册完成，请重新登录~");
+		return LOGIN;
 			
 	}
 }

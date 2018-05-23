@@ -8,29 +8,29 @@
 		<constant name="struts.objectFactory" value="spring"/>
 	 -->
 	<package name="basicstruts2" extends="struts-default">
-	<interceptors>
-		<!-- 注册自定义拦截器 -->
-		<interceptor name="mpLoginInterceptor"
-			class="com.mplbs.action.interceptor.MPLoginInterceptor">
-			<!-- 指定哪些方法不需要拦截 -->
-			<param name="excludeMethods">login</param>
-		</interceptor>
-		<!-- 定义拦截器栈 -->
-		<interceptor-stack name="myStack">
-			<interceptor-ref name="mpLoginInterceptor"></interceptor-ref>
-			<interceptor-ref name="defaultStack"></interceptor-ref>
-		</interceptor-stack>
-	</interceptors>
-	<default-interceptor-ref name="myStack" />
-	<!-- 全局结果集定义 -->
-	<global-results>
-		<result name="login">/login.jsp</result>
-	</global-results>	
+		<interceptors>
+			<!-- 注册自定义拦截器 -->
+			<interceptor name="mpLoginInterceptor"
+				class="com.mplbs.action.interceptor.MPLoginInterceptor">
+				<!-- 指定哪些方法不需要拦截 -->
+				<param name="excludeMethods">login,register</param>
+			</interceptor>
+			<!-- 定义拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="mpLoginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<!-- 全局结果集定义 -->
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>	
 		<!-- 需要进行权限控制的页面访问 -->
 		<action name="page_*_*">
 			<result type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
 		</action>
-		
+		<!-- 用户Action配置 -->
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="login">/login.jsp</result>
 			<result name="home">WEB-INF/pages/common/index.jsp</result>
