@@ -8,26 +8,27 @@
 <!-- 导入jquery核心类库 -->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
-<!-- 导入easyui类库 -->
-<link id="easyuiTheme" rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/js/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/js/easyui/themes/icon.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath }/css/default.css">
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/easyui/jquery.easyui.min.js"></script>
-<!-- 导入ztree类库 -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath }/js/ztree/zTreeStyle.css"
-	type="text/css" />
-<script
-	src="${pageContext.request.contextPath }/js/ztree/jquery.ztree.all-3.5.js"
-	type="text/javascript"></script>
-<script
-	src="${pageContext.request.contextPath }/js/easyui/locale/easyui-lang-zh_CN.js"
-	type="text/javascript"></script>
 
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+	<script type="text/javascript" src="js/nav.js"></script>
+	
+<script type="text/javascript">
+$(function(){
+	$.ajax({  
+        url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
+        type:'Post',  
+        dataType:'json',  
+        success:function(data){  
+            alert("1");  
+        }, 
+        error: function (data) {  
+            alert("加载出错！");  
+        }
+	});
+})
+</script>
 </head>
 <body class="easyui-layout">
 	<div data-options="region:'north',border:false"
@@ -55,16 +56,29 @@
 			<div onclick="logoutFun();">退出系统</div>
 		</div>
 	</div>
-	<div data-options="region:'west',split:true,title:'菜单导航'"
-		style="width:200px">
-		<div class="easyui-accordion" fit="true" border="false">
-			<div title="基本功能" data-options="iconCls:'icon-mini-add'" style="overflow:auto">
-				<ul id="treeMenu" class="ztree"></ul>
-			</div>
-			<div title="系统管理" data-options="iconCls:'icon-mini-add'" style="overflow:auto">  
-				<ul id="adminMenu" class="ztree"></ul>
-			</div>
-		</div>
+	<div class="nav">
+	        <div class="nav-top">
+	            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png" ></div>
+	        </div>
+	        <ul>
+	            <li class="nav-item">
+	                <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>网站配置</span><i class="my-icon nav-more"></i></a>
+	                <ul>
+	                    <li><a href="${pageContext.request.contextPath }/menuAction_getMenu.action"><span>Action设置</span></a></li>
+	                    <li><a href="javascript:;"><span>友情链接</span></a></li>
+	                    <li><a href="javascript:;"><span>分类管理</span></a></li>
+	                </ul>
+	            </li>
+	            <li class="nav-item">
+	                <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-more"></i></a>
+	                <ul>
+	                    <li><a href="javascript:;"><span>站内新闻</span></a></li>
+	                    <li><a href="javascript:;"><span>站内公告</span></a></li>
+	                    <li><a href="javascript:;"><span>登录日志</span></a></li>
+	                </ul>
+	            </li>
+	            
+	        </ul>
 	</div>
 	<div data-options="region:'center'">
 		<div id="tabs" fit="true" class="easyui-tabs" border="false">

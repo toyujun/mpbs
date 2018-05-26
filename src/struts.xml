@@ -35,5 +35,9 @@
 			<result name="login">/login.jsp</result>
 			<result name="home">WEB-INF/pages/common/index.jsp</result>
 		</action>
+		<!-- 主页菜单Action配置 -->
+		<action name="menuAction_*" class="menuAction" method="{1}">
+			
+		</action>
 	</package>
 </struts>

@@ -3,6 +3,7 @@ package com.mplbs.action;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Controller;
 
 import com.mplbs.action.base.BaseAction;
 import com.mplbs.domain.Menu;
+import com.mplbs.domain.User;
 import com.mplbs.service.MenuService;
+import com.mplbs.service.UserService;
 
 import net.sf.json.JSONArray;
 
@@ -18,6 +21,7 @@ import net.sf.json.JSONArray;
 @Scope("prototype")
 public class MenuAction extends BaseAction<Menu> {
 	
+		
 	@Autowired
 	private MenuService menuService;
 	
@@ -25,7 +29,9 @@ public class MenuAction extends BaseAction<Menu> {
 	 * 主页菜单显示
 	 */
 	public String getMenu() {
+		
 		List<Menu> menu = menuService.findMenu();
+		
 		
 		//将menu列表放入json
 		
@@ -37,6 +43,7 @@ public class MenuAction extends BaseAction<Menu> {
 			e.printStackTrace();
 		}
 		
-		return LOGIN;
+		return null;
+		
 	}
 }
