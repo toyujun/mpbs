@@ -32,4 +32,5 @@ $(function(){
             $('.nav').removeClass('nav-mini');
         }
     });
+    
 });

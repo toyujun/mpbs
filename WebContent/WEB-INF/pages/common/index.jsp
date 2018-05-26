@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
-	<script type="text/javascript" src="js/nav.js"></script>
+	
 	
 <script type="text/javascript">
 $(function(){
@@ -20,13 +20,32 @@ $(function(){
         url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
         type:'Post',  
         dataType:'json',  
-        success:function(data){  
-            alert("1");  
+        success:function(data){
+         	var menuhtml = "";
+        	for(var i=0; i<data.length; i++){
+        		
+        		//加载一级菜单
+        		menuhtml += '<li class="nav-item"><a href="#"><span>' 
+        		+data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
+        	    
+				var child = data[i].childMenu;
+        	   /* //二级菜单
+        	    for(var j=0; j<3; j++){
+        	    	menuhtml +=  '<li>'+ '<a href="#">' + '<span>' + child[j].daleimc + '</span>' + '</a>' + '</li>';
+        		} */ 
+        		menuhtml += '<li><a href="javascript:;"><span>站内新闻</span></a></li>';
+        	 	menuhtml += '</ul>' + '</li>';
+        	 	console.log(child.length);
+        	}
+        	$(".nav>ul").append(menuhtml);
+        	
+        	
         }, 
         error: function (data) {  
             alert("加载出错！");  
         }
-	});
+        
+	}); 
 })
 </script>
 </head>
@@ -57,26 +76,11 @@ $(function(){
 		</div>
 	</div>
 	<div class="nav">
+			<script type="text/javascript" src="js/nav.js"></script>
 	        <div class="nav-top">
 	            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png" ></div>
 	        </div>
 	        <ul>
-	            <li class="nav-item">
-	                <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>网站配置</span><i class="my-icon nav-more"></i></a>
-	                <ul>
-	                    <li><a href="${pageContext.request.contextPath }/menuAction_getMenu.action"><span>Action设置</span></a></li>
-	                    <li><a href="javascript:;"><span>友情链接</span></a></li>
-	                    <li><a href="javascript:;"><span>分类管理</span></a></li>
-	                </ul>
-	            </li>
-	            <li class="nav-item">
-	                <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-more"></i></a>
-	                <ul>
-	                    <li><a href="javascript:;"><span>站内新闻</span></a></li>
-	                    <li><a href="javascript:;"><span>站内公告</span></a></li>
-	                    <li><a href="javascript:;"><span>登录日志</span></a></li>
-	                </ul>
-	            </li>
 	            
 	        </ul>
 	</div>
@@ -100,7 +104,9 @@ $(function(){
 						</div>
 					</td>
 					<td style="width: *;" class="co1"><span id="online"
-						style="background: url(${pageContext.request.contextPath }/images/online.png) no-repeat left;padding-left:18px;margin-left:3px;font-size:8pt;color:#005590;">在线人数:1</span>
+						style="background: url(${pageContext.request.contextPath }
+						/images/online.png) no-repeat left;padding-left:18px;
+						margin-left:3px;font-size:8pt;color:#005590;">在线人数:3</span>
 					</td>
 				</tr>
 			</tbody>
