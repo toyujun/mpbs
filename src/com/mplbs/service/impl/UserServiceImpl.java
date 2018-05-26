@@ -3,6 +3,7 @@ package com.mplbs.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +16,7 @@ import com.mplbs.utils.MD5Utils;
 @Transactional
 public class UserServiceImpl implements UserService {
 	
-	@Resource
+	@Autowired
 	private UserDao userDao;
 
 	public User login(User user) {
