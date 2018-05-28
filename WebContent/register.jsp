@@ -18,7 +18,7 @@
 		<div class="main">
 	    	<div class="mainin">
 	        	<h1>零部件管理-注册</h1>
-	            <div class="mainin1">
+	            <div class="mainin2">
 	            	<ul>
 	                	<li><span>请输入要注册的用户名：</span><input name="username" type="text" id="userName" placeholder="登录名" class="SearchKeyword"></li>
 	                    <li><span>请输入昵称：</span><input name="username" type="text" id="userName" placeholder="登录名" class="SearchKeyword"></li>
@@ -26,7 +26,7 @@
 	                    <li><span>请输入Email地址：</span><input name="email" type="text" id="email" placeholder="Email地址" class="SearchKeyword"></li>
 	                    <li><span>请输入电话号码：</span><input name="telephone" type="text" id="telephone" placeholder="电话号码" class="SearchKeyword"></li>
 	                    <li><span>请选择性别：</span><input name="gender" type="radio" id="sexman" value="m">男
-	                    <input name="gender" type="radio" id="sexwoman" value="w">女
+	                    <input name="gender" type="radio" id="sexwoman" value="w" >女
                     	</li>
 	                    <div id="errormessage"><s:actionerror/></div>
 	                    <li><button class="tijiao">提交</button></li>

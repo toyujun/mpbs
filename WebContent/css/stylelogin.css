@@ -3,15 +3,18 @@ body{background: #006eb0 url(../images/lgbg.png) center top no-repeat;clear: bot
 .main{ margin:0 auto; width:960px; overflow:hidden;}
 .mainin{ margin:0 auto; width:381px; overflow:hidden; clear:both; padding-top:80px;}
 .mainin h1{font-size:28px;color:#ffffff; float:left; width:100%; height:22px; text-align:center; padding-bottom:42px;}
-.mainin1{ float:left; width:381px; height:600px; background:#dcebf4 no-repeat;}
+.mainin1{ float:left; width:381px; height:400px; background:#dcebf4 no-repeat;}
+
 .mainin1 ul{ float:left; padding:10px 25px 0px; overflow:hidden; width:331px;}
-.mainin1 ul li{ float:left; width:100%; overflow:hidden; padding-bottom:10px;}
+.mainin1 ul li{ float:left; width:100%; overflow:hidden;/* 防止外边距合并 */ padding-bottom:10px;}
 .mainin1 ul li span, .mainin1 ul li input{ float:left; }
+
 
 #checkcode {float:left; width: 30%; margin-right:30px;}
 .mainin1 ul li span{ width:100%; clear:both; color:#6f6f6f; font-family:"Microsoft YaHei"; font-size:14px; line-height:37px;}
-.mainin2 ul li span{ width:100%; clear:both; color:#6f6f6f; font-family:"Microsoft YaHei"; font-size:14px; line-height:37px;}
+.mainin2 ul li span{ width:100%; clear:both; color:#ffffff; font-family:"Microsoft YaHei"; font-size:18px; line-height:37px;}
 
+.mainin1 ul:nth-child(6){width:381px; height:20px;}
 .errorMessage li {float:left; width:331px; height:30px; font: bold 20px; color: red; text-align: center; }
 .SearchKeyword {border:1px solid #c8c8c8;width: 202px;color: #999;font-size:12px; line-height:35px; background:url(../images/srbg.png) no-repeat; height:35px; width:317px; padding-left:10px;}
 .SearchKeyword2 {border:1px solid #c8c8c8;width: 202px;color: #999;font-size:12px; line-height:35px; background:url(../images/srbg.png) no-repeat; height:35px; width:317px; padding-left:10px;}
