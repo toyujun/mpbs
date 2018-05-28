@@ -4,55 +4,47 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户登录</title>
+<title>用户注册</title>
 <!-- 导入jquery核心类库 -->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="css/stylelogin.css" /> 
 </head>
 
 <body>
-	<div id="lbNormal" style="font-size: 30px; width: 30%; text-align: center; margin: 40px auto">用户注册</div>
-	<form id="regform" name="regform" method="post" class="niceform"
-        action="userAction_register.action">
-		<div id="idInputLine" class="loginFormIpt" style="width: 400px; margin: 5px auto;">
-			<label for="idInput" class="placeholder" id="idPlaceholder">请输入要注册的用户名：</label>
-			<input id="loginform:idInput" type="text" name="username" 
-			class="loginFormTdIpt" maxlength="50" />
-		</div>
-		<div id="emailInputLine" class="loginFormIpt" style="width: 400px; margin: 5px auto;">
-			<label for="emailInput" class="placeholder" id="emailPlaceholder">请输入Email地址：</label>
-			<input id="loginform:emailInput" type="text" name="email" 
-			class="loginFormTdIpt" maxlength="50" />
-		</div>
-		<div id="pswInputLine" class="loginFormIpt" style="width: 400px; margin: 5px auto;">
-			<label for="pswInput" class="placeholder" id="pswPlaceholder">请输入密码：</label>
-			<input id="loginform:pswInput" type="text" name="password" 
-			class="loginFormTdIpt" maxlength="50" />
-			<label for="pswInput" class="placeholder" id="pswPlaceholder">确认密码：</label>
-			
-		</div>
-		<div id="teleInputLine" class="loginFormIpt showPlaceholder" style="width: 280px; margin-left: 780px;">
-			<label for="teleInput" class="placeholder" id="telePlaceholder">请输入电话：</label>
-			<input id="loginform:teleInput" type="text" name="telephone" 
-			class="loginFormTdIpt" maxlength="50" />
-		</div>
-		<div id="nickInputLine" class="loginFormIpt showPlaceholder" style="width: 280px; margin-left: 780px;">
-			<label for="nickInput" class="placeholder" id="nickPlaceholder">请输入昵称：</label>
-			<input id="loginform:nickInput" type="text" name="nickname" 
-			class="loginFormTdIpt" maxlength="50" />
-		</div>
-		<div id="nickInputLine" class="loginFormIpt showPlaceholder" style="width: 280px; margin-left: 780px;">
-			<label for="SexInput" class="placeholder" id="SexPlaceholder">请您选择性别：</label>
-			<input id="loginform:sexman" type="radio" name="gender" value="m" class="loginFormTdIpt" />男
-			<input id="loginform:sexwoman" type="radio" name="gender" value="w" class="loginFormTdIpt" />女
-		</div>
 
-		<div id="loginform:loginBtn" class="btn btn-login" style="width: 280px; margin: 20px auto;">
-			<input type="submit" name="Submit" value="提交">
-		</div>
-			
-		</a>
+	<form id="loginform" name="loginform" method="post" class="niceform"
+        action="userAction_register.action">
+		<div class="main">
+	    	<div class="mainin">
+	        	<h1>零部件管理-注册</h1>
+	            <div class="mainin1">
+	            	<ul>
+	                	<li><span>请输入要注册的用户名：</span><input name="username" type="text" id="userName" placeholder="登录名" class="SearchKeyword"></li>
+	                    <li><span>请输入昵称：</span><input name="username" type="text" id="userName" placeholder="登录名" class="SearchKeyword"></li>
+	                    <li><span>请输入密码：</span><input type="password" name="password" id="password" placeholder="密码" class="SearchKeyword2"></li>
+	                    <li><span>请输入Email地址：</span><input name="email" type="text" id="email" placeholder="Email地址" class="SearchKeyword"></li>
+	                    <li><span>请输入电话号码：</span><input name="telephone" type="text" id="telephone" placeholder="电话号码" class="SearchKeyword"></li>
+	                    <li><span>请选择性别：</span><input name="gender" type="radio" id="sexman" value="m">男
+	                    <input name="gender" type="radio" id="sexwoman" value="w">女
+                    	</li>
+	                    <div id="errormessage"><s:actionerror/></div>
+	                    <li><button class="tijiao">提交</button></li>
+	                    <li><span><a href="${pageContext.request.contextPath }/login.jsp" target="_blank">已注册登录</a></span></li>
+	                </ul>
+	            </div>
+	            <div class="footpage"><span style="" font-family:arial;""="">Copyright </span>2018 <a href="#" target="_blank">Toyujun</a> </div>
+	        </div>
+    	</div>
+	<!-- <img src="images/loading.gif" id="loading" style="  position:absolute;" />
+	<div id="POPLoading" class="cssPOPLoading">
+	    <div style=" height:110px; border-bottom:1px solid #9a9a9a">
+	        <div class="showMessge"></div>
+	    </div>
+	    <div style=" line-height:40px; font-size:14px; letter-spacing:1px;">
+	        <a onclick="puc()">确定</a>
+	    </div>
+	</div> -->
 
 	</form>
 </body>
