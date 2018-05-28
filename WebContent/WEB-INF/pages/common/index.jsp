@@ -12,42 +12,39 @@
 	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!-- 	<script type="text/javascript" src="js/nav.js"></script>
+ --><script type="text/javascript">
+$.ajax({  
+    url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
+    type:'Post',  
+    dataType:'json',  
+    success:function(data){
+	var menuhtml = "";
+    	for(var i=0; i<data.length; i++){
+    		
+    		//加载一级菜单
+    		menuhtml += '<li class="nav-item"><a href="#"><span>' +data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
+    	    
+			var child = data[i].childMenu;
+    	    //二级菜单
+    	    for(var j=0; j<child.length; j++){
+    	    	menuhtml +=  '<li> <a href="#"> <span>' + child[j].daleimc + '</span> </a> </li>';
+    		} 
+    	 	menuhtml += '</ul> </li>';
+    	 	
+    	}
+    	$(".nav>ul").append(menuhtml);
+    }, 
+    error: function (data) {  
+        alert("加载出错！");  
+    }
+    
+});
+
+</script>	
 	
-	
-<script type="text/javascript">
-$(function(){
-	$.ajax({  
-        url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
-        type:'Post',  
-        dataType:'json',  
-        success:function(data){
-         	var menuhtml = "";
-        	for(var i=0; i<data.length; i++){
-        		
-        		//加载一级菜单
-        		menuhtml += '<li class="nav-item"><a href="#"><span>' 
-        		+data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
-        	    
-				var child = data[i].childMenu;
-        	   /* //二级菜单
-        	    for(var j=0; j<3; j++){
-        	    	menuhtml +=  '<li>'+ '<a href="#">' + '<span>' + child[j].daleimc + '</span>' + '</a>' + '</li>';
-        		} */ 
-        		menuhtml += '<li><a href="javascript:;"><span>站内新闻</span></a></li>';
-        	 	menuhtml += '</ul>' + '</li>';
-        	 	console.log(child.length);
-        	}
-        	$(".nav>ul").append(menuhtml);
-        	
-        	
-        }, 
-        error: function (data) {  
-            alert("加载出错！");  
-        }
-        
-	}); 
-})
-</script>
+
+
 </head>
 <body class="easyui-layout">
 	<div data-options="region:'north',border:false"
@@ -76,7 +73,7 @@ $(function(){
 		</div>
 	</div>
 	<div class="nav">
-			<script type="text/javascript" src="js/nav.js"></script>
+			
 	        <div class="nav-top">
 	            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png" ></div>
 	        </div>
@@ -106,7 +103,7 @@ $(function(){
 					<td style="width: *;" class="co1"><span id="online"
 						style="background: url(${pageContext.request.contextPath }
 						/images/online.png) no-repeat left;padding-left:18px;
-						margin-left:3px;font-size:8pt;color:#005590;">在线人数:3</span>
+						margin-left:3px;font-size:8pt;color:#005590;">在线人数:4</span>
 					</td>
 				</tr>
 			</tbody>
