@@ -9,6 +9,7 @@
 <!-- 导入jquery核心类库 -->
 	<script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css" /> 
 </head>
 

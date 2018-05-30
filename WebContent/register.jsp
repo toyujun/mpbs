@@ -9,6 +9,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/stylelogin.css" /> 
+	<link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body>

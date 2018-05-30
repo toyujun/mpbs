@@ -8,6 +8,10 @@
 <!-- 导入jquery核心类库 -->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
+<!-- css初始化文件 -->	
+	<link rel="stylesheet" href="css/normalize.css">
+<!-- css公共文件 -->	
+	<link rel="stylesheet" href="css/base.css">
 <script type="text/javascript">
 $.ajax({  
     url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
@@ -39,7 +43,7 @@ $.ajax({
 </head>
 
 <body>
-	<div id="main">
+	<div class="w" id="main">
 		<div id="headerContainer">
 			<div id="logo">Mechanical零部件管理系统</div>
 		</div>
@@ -49,7 +53,9 @@ $.ajax({
 		        	<ul></ul>
 				</div>
 			</div>
-			<div id="contentHeaderPane"></div>
+			<div id="contentHeaderPane">
+				
+			</div>
 			<div id="contentPane"></div>
 		</div>
 		<div id="footerContainer"></div>
