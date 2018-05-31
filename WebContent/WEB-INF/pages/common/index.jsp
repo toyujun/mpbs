@@ -53,12 +53,34 @@ $.ajax({
 		        	<ul></ul>
 				</div>
 			</div>
-			<div id="contentHeaderPane">
-				
+			<div class="contentHeader" id="contentHeaderPane">
+				<ul class="fr">
+		        	<li>
+		        		<a href="#">首页</a>
+		        	</li>
+					<li class="space"></li>
+					<li>
+		        		<a href="#">上传</a>
+		        	</li>
+					<li class="space"></li>	
+					<li>
+		        		<a href="#">管理</a>
+		        	</li>
+					<li class="space"></li>	
+					<li>
+		        		<a href="#">帮助</a>
+		        	</li>	
+		        </ul>
+		        <div class="search">
+		        	<input type="text" placeholder="螺钉">
+		        	<button><i></i></button>
+		        </div>
 			</div>
 			<div id="contentPane"></div>
 		</div>
-		<div id="footerContainer"></div>
+		<div id="footerContainer">
+			<span class="copyright">Copyright © 2018</span><a href="#" target="_blank">Toyujun</a>
+		</div>
 	</div>
 </body>
 </html>
