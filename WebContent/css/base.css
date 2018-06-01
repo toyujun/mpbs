@@ -14,8 +14,9 @@
 
 .navigationPane { /*  浮动的左侧导航面板 */
 	width:150px;
+	height:800px;
 	float: left;
-	background-color: #4595c5;
+	color: #4595c5;
 }
 
 .footer {     /* 页脚面板 */

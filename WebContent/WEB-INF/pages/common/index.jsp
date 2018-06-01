@@ -13,32 +13,47 @@
 <!-- css公共文件 -->	
 	<link rel="stylesheet" href="css/base.css">
 <script type="text/javascript">
-$.ajax({  
-    url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
-    type:'Post',  
-    dataType:'json',  
-    success:function(data){
-	var menuhtml = "";
-    	for(var i=0; i<data.length; i++){
-    		
-    		//加载一级菜单
-    		menuhtml += '<li><a href="#"><span>' +data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
-    	    
-			var child = data[i].childMenu;
-    	    //二级菜单
-    	    for(var j=0; j<child.length; j++){
-    	    	menuhtml +=  '<li> <a href="#"> <span>' + child[j].daleimc + '</span> </a> </li>';
-    		} 
-    	 	menuhtml += '</ul> </li>';
-    	 	
-    	}
-    	$(".nav>ul").append(menuhtml);
-    }, 
-    error: function (data) {  
-        alert("加载出错！");  
-    }
-    
-});
+$(function(){ 
+	$.ajax({  
+	    url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
+	    type:'Post',  
+	    dataType:'json',  
+	    success:function(data){
+		var menuhtml = "";
+	    	for(var i=0; i<data.length; i++){
+	    		
+	    		//加载一级菜单
+	    		menuhtml += '<li><a href="#"><span>' +data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
+	    	    
+				var child = data[i].childMenu;
+	    	    //二级菜单
+	    	    for(var j=0; j<child.length; j++){
+	    	    	menuhtml +=  '<li> <a href="#"> <span>' + child[j].daleimc + '</span> </a> </li>';
+	    		} 
+	    	 	menuhtml += '</ul> </li>';
+	    	 	
+	    	}
+	    	$(".nav>ul").append(menuhtml);
+	    }, 
+	    error: function (data) {  
+	        alert("加载出错！");  
+	    }
+	    
+	});
+	
+  	$(".fr").on("click","a",function(){
+		var sId = $(this).data("id"); //获取单击id值
+		alert(sId);
+		switch(sId){
+			case "upload":
+				pathn = "test.html";
+				alert("1");
+				break;
+		}
+		$(".contentPane").load(pathn);
+	});	 
+}); 
+
 </script>	
 </head>
 
@@ -56,7 +71,7 @@ $.ajax({
 		        	</li>
 					<li class="space"></li>
 					<li>
-		        		<a href="#">上传</a>
+		        		<a href="#" data-id="upload">上传</a>
 		        	</li>
 					<li class="space"></li>	
 					<li>
