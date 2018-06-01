@@ -44,16 +44,12 @@ $.ajax({
 
 <body>
 	<div class="w" id="main">
-		<div id="headerContainer">
+		<div class="w headerContainer">
 			<div id="logo">Mechanical零部件管理系统</div>
 		</div>
-		<div id="contentContainer">
-			<div id="navigationPane">
-				<div class="nav">
-		        	<ul></ul>
-				</div>
-			</div>
-			<div class="contentHeader" id="contentHeaderPane">
+		<div class="contentContainer">
+			
+			<div class="w contentHeader" id="contentHeaderPane">
 				<ul class="fr">
 		        	<li>
 		        		<a href="#">首页</a>
@@ -76,9 +72,14 @@ $.ajax({
 		        	<button><i></i></button>
 		        </div>
 			</div>
-			<div id="contentPane"></div>
+			<div class="navigationPane">
+				<div class="nav">
+		        	<ul></ul>
+				</div>
+			</div>
+			<div class="contentPane"></div>
 		</div>
-		<div id="footerContainer">
+		<div class="footer">
 			<span class="copyright">Copyright © 2018</span><a href="#" target="_blank">Toyujun</a>
 		</div>
 	</div>
