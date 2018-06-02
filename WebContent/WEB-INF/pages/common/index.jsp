@@ -23,7 +23,7 @@ $(function(){
 	    	for(var i=0; i<data.length; i++){
 	    		
 	    		//加载一级菜单
-	    		menuhtml += '<li><a href="#"><span>' +data[i].daleimc+ '</span><i class="my-icon nav-more"></i></a><ul>';
+	    		menuhtml += '<li class="nav-item"><a href="#"><span>' +data[i].daleimc+ '</span></a><ul>';
 	    	    
 				var child = data[i].childMenu;
 	    	    //二级菜单
@@ -41,13 +41,17 @@ $(function(){
 	    
 	});
 	
+	$(".contentPane").load("front/mainpage.html");
+	
   	$(".fr").on("click","a",function(){
+  		$("#contentPane").empty();
 		var sId = $(this).data("id"); //获取单击id值
-		alert(sId);
 		switch(sId){
+			case "mainpage":
+				pathn = "front/mainpage.html";
+				break;
 			case "upload":
-				pathn = "test.html";
-				alert("1");
+				pathn = "front/adminupload.html";
 				break;
 		}
 		$(".contentPane").load(pathn);
@@ -67,7 +71,7 @@ $(function(){
 			<div class="w contentHeader" id="contentHeaderPane">
 				<ul class="fr">
 		        	<li>
-		        		<a href="#">首页</a>
+		        		<a href="#" data-id="mainpage">首页</a>
 		        	</li>
 					<li class="space"></li>
 					<li>
@@ -75,11 +79,11 @@ $(function(){
 		        	</li>
 					<li class="space"></li>	
 					<li>
-		        		<a href="#">管理</a>
+		        		<a href="#" data-id="manage">管理</a>
 		        	</li>
 					<li class="space"></li>	
 					<li>
-		        		<a href="#">帮助</a>
+		        		<a href="#" data-id="help">帮助</a>
 		        	</li>	
 		        </ul>
 		        <div class="search">
@@ -89,10 +93,12 @@ $(function(){
 			</div>
 			<div class="navigationPane">
 				<div class="nav">
-		        	<ul></ul>
+					<ul>
+					<div class="nav-top"><span>零件分类</span></div>
+					</ul>
 				</div>
 			</div>
-			<div class="contentPane"></div>
+			<div class="contentPane">mainpage.html</div>
 		</div>
 		<div class="footer">
 			<span class="copyright">Copyright © 2018</span><a href="#" target="_blank">Toyujun</a>
