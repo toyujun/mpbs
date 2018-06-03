@@ -36,8 +36,8 @@
 			<result name="home">WEB-INF/pages/common/index.jsp</result>
 		</action>
 		<!-- 主页菜单Action配置 -->
-		<action name="menuAction_*" class="menuAction" method="{1}">
-			
-		</action>
+		<action name="menuAction_*" class="menuAction" method="{1}"></action>
+		<!-- 保存设计件Action配置 -->
+		<action name="DesPartAction_*" class="desPartAction" method="{1}"></action>
 	</package>
 </struts>
