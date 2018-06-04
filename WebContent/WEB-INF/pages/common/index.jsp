@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="css/base.css">
 <script type="text/javascript">
 $(function(){ 
-	$.ajax({  
+	$.ajax({  				//加载左侧面板
 	    url:'${pageContext.request.contextPath }/menuAction_getMenu.action',  
 	    type:'Post',  
 	    dataType:'json',  
@@ -34,6 +34,7 @@ $(function(){
 	    	 	
 	    	}
 	    	$(".nav>ul").append(menuhtml);
+	    	
 	    }, 
 	    error: function (data) {  
 	        alert("加载出错！");  
@@ -41,9 +42,9 @@ $(function(){
 	    
 	});
 	
-	$(".contentPane").load("front/mainpage.html");
+	$(".contentPane").load("front/mainpage.html"); //初始化内容显示区域
 	
-  	$(".fr").on("click","a",function(){
+  	$(".fr").on("click","a",function(){  //顶部导航栏
   		$("#contentPane").empty();
 		var sId = $(this).data("id"); //获取单击id值
 		switch(sId){
@@ -53,9 +54,32 @@ $(function(){
 			case "upload":
 				pathn = "front/adminupload.html";
 				break;
+			case "manage":
+				tableb("${pageContext.request.contextPath }/desPartAction_getAll.action");
+				pathn = "front/manage.html";
+				break;
 		}
-		$(".contentPane").load(pathn);
-	});	 
+		/* $(".contentPane").load(pathn); */
+	});
+	
+  	function tableb(url) {
+        
+        $.ajax({
+            type: "post",
+            url: url,
+            data: {},
+            success: function (result) {
+                var items = eval(result);
+                var content = "";
+                for (var i = 0; i < items.length; i++) {
+                    content = $("<tr><td>" + items[i].id + "</td><td>" + items[i].name + "</td><td>" + items[i].drawing + "</td><td>" + items[i].descb + "</td></tr>");
+                    alert(content);
+                    $(".contentPane").append(content);
+                }
+            }
+        });
+    };
+
 }); 
 
 </script>	
@@ -98,7 +122,7 @@ $(function(){
 					</ul>
 				</div>
 			</div>
-			<div class="contentPane">mainpage.html</div>
+			<div class="contentPane"></div>
 		</div>
 		<div class="footer">
 			<span class="copyright">Copyright © 2018</span><a href="#" target="_blank">Toyujun</a>
