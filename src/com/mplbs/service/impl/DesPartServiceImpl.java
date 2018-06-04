@@ -16,9 +16,9 @@ public class DesPartServiceImpl implements DesPartService {
 	private DesPartDao desPartDao;
 	
 	@Override
-	public void save(DesPart model) {
+	public void save(DesPart des) {
 		// TODO Auto-generated method stub
-		desPartDao.save(model);
+		desPartDao.save(des);
 	}
 
 }
