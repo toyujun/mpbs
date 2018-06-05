@@ -45,40 +45,38 @@ $(function(){
 	$(".contentPane").load("front/mainpage.html"); //初始化内容显示区域
 	
   	$(".fr").on("click","a",function(){  //顶部导航栏
-  		$("#contentPane").empty();
+  		$(".contentPane").empty();
 		var sId = $(this).data("id"); //获取单击id值
 		switch(sId){
 			case "mainpage":
-				pathn = "front/mainpage.html";
+				var pathn = "front/mainpage.html";
 				break;
 			case "upload":
-				pathn = "front/adminupload.html";
-				break;
-			case "manage":
-				tableb("${pageContext.request.contextPath }/desPartAction_getAll.action");
-				pathn = "front/manage.html";
+				var pathn = "front/adminupload.html";
 				break;
 		}
-		/* $(".contentPane").load(pathn); */
+		$(".contentPane").load(pathn); 
 	});
 	
-  	function tableb(url) {
-        
-        $.ajax({
+	$("#manage").on("click",function(){
+		$.ajax({
             type: "post",
-            url: url,
+            url: '${pageContext.request.contextPath }/desPartAction_getAll.action',
             data: {},
             success: function (result) {
+            	$(".contentPane").empty();
                 var items = eval(result);
-                var content = "";
+                var content = "<table id='generatedTable' border='1' width='600px'><tr><th>第一列</th><th>第二列</th><th>第三列</th><th>第四列</th></tr>";
                 for (var i = 0; i < items.length; i++) {
-                    content = $("<tr><td>" + items[i].id + "</td><td>" + items[i].name + "</td><td>" + items[i].drawing + "</td><td>" + items[i].descb + "</td></tr>");
-                    alert(content);
-                    $(".contentPane").append(content);
+                    content += "<tr><td width='25%'>" + items[i].id + "</td><td>" + items[i].name + "</td><td>" + items[i].drawing + "</td><td>" + items[i].descb + "</td></tr>";
                 }
+                content += "</table>"; 
+                $(".contentPane").append(content);
             }
         });
-    };
+		
+	});
+
 
 }); 
 
@@ -103,7 +101,7 @@ $(function(){
 		        	</li>
 					<li class="space"></li>	
 					<li>
-		        		<a href="#" data-id="manage">管理</a>
+		        		<a href="#" id="manage">管理</a>
 		        	</li>
 					<li class="space"></li>	
 					<li>
