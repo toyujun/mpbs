@@ -9,7 +9,7 @@ public class DesPart {
 	private String drawing;
 	private String descb;
 	private String creater;
-	private Integer sta=0;
+	private Integer sta;
 	private Date time;
 	
 	public Integer getId() {

@@ -54,30 +54,13 @@ $(function(){
 			case "upload":
 				var pathn = "front/adminupload.html";
 				break;
+			case "manage":
+				var pathn = "front/manage.html";
+				break;
+			
 		}
 		$(".contentPane").load(pathn); 
 	});
-	
-	$("#manage").on("click",function(){
-		$.ajax({
-            type: "post",
-            url: '${pageContext.request.contextPath }/desPartAction_getAll.action',
-            data: {},
-            success: function (result) {
-            	$(".contentPane").empty();
-                var items = eval(result);
-                var content = "<table id='generatedTable' border='1' width='600px'><tr><th>第一列</th><th>第二列</th><th>第三列</th><th>第四列</th></tr>";
-                for (var i = 0; i < items.length; i++) {
-                    content += "<tr><td width='25%'>" + items[i].id + "</td><td>" + items[i].name + "</td><td>" + items[i].drawing + "</td><td>" + items[i].descb + "</td></tr>";
-                }
-                content += "</table>"; 
-                $(".contentPane").append(content);
-            }
-        });
-		
-	});
-
-
 }); 
 
 </script>	
@@ -101,7 +84,7 @@ $(function(){
 		        	</li>
 					<li class="space"></li>	
 					<li>
-		        		<a href="#" id="manage">管理</a>
+		        		<a href="#" data-id="manage">管理</a>
 		        	</li>
 					<li class="space"></li>	
 					<li>
