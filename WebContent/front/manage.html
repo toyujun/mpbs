@@ -12,75 +12,103 @@
 	<link rel="stylesheet" href="css/manage.css">
 <script type="text/javascript">
 $(function(){
-	$.ajax({
-        type: "post",
-        url: '${pageContext.request.contextPath }/desPartAction_getAll.action',
-        data: {},
-        success: function (result) {
-        	$(".content").empty();
-            var items = eval(result);
-            var content = '';
-            content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>图纸</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th></tr>';
-            for (var i = 0; i < items.length; i++) {
-                content += '<tr><td>' + items[i].id + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
-                '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
-                '</td><td>' + items[i].time + '</td></tr>';
-            }
-            content += '</table>'; 
-            $(".content").append(content);
-        }
-    });	
-	
-	/* var currentPage = "$!pageBean.currentPage";
+	var currentPage;
 	if(!currentPage){
 		currentPage = 1;
 	}
-	var tatalPage = "$!pageBean.totalPage"; */
+	var tatalPage;
+	var pageSize;
+	
+	$.ajax({                 /*页面初始加载到第一页 */
+        type: "post",
+        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+        data: {pageSize: 5, currentPage: 1},
+        success: function (result) {
+			tohtml(result);
+        }
+    });
+	
+	function tohtml(jdata){          /* 拼接表格数据的html */
+    	$(".content").empty();
+        var res = eval(jdata);
+        var items = res.rows;          //jason数组中取要显示的表格数据
+        pageSize = res.pageSize;       //每页大小
+        currentPage = res.currentPage;   //当前页
+        totalPage = Math.ceil(res.total / res.pageSize);   //计算总页数
+        var content = '';
+        content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>图纸</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th></tr>';
+        for (var i = 0; i < items.length; i++) {
+            content += '<tr><td>' + items[i].id + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
+            '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
+            '</td><td>' + items[i].time + '</td></tr>';
+        }
+        content += '</table>'; 
+        $(".content").append(content);
+	};
 	
 	//首页
 	$("#firstPage").on("click",function(){
-/* 		if(currentPage == 1){
-			alert("已经是第一页");
-			return;
-		}else{ */
-/* 			var form = $("<form>").attr("action","${pageContext.request.contextPath}/desPartAction_page.action").attr("method","POST").appendTo($("body"));
-	        
-	        $("<input>").attr("type","hidden").attr("name",pageSize).attr("value",5).appendTo(form);
-	        $("<input>").attr("type","hidden").attr("name",currentPage).attr("value",1).appendTo(form);
-	        
-	        
-	        form.submit(); */
-			$.ajax({
-		        type: "post",
-		        url: '${pageContext.request.contextPath}/desPartAction_page.action',
-		        data: {pageSize: "6", currentPage: "1"},
-		        success: function (result) {
-		        	console.log(result);
-		        	$(".content").empty();
-		            var res = eval(result);
-		            var items = res[0];
-		            var content = '';
-		            content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>图纸</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th></tr>';
-		            for (var i = 0; i < items.length; i++) {
-		                content += '<tr><td>' + items[i].id + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
-		                '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
-		                '</td><td>' + items[i].time + '</td></tr>';
-		            }
-		            content += '</table>'; 
-		            $(".content").append(content);
-		        }
-		    });	
-/* 		} */
+		$.ajax({
+	        type: "post",
+	        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+	        data: {pageSize: 5, currentPage: 1},
+	        success: function (result) {
+				tohtml(result);
+	        }
+	    });	
+
 	});
+	
+	//下一页
+	$("#nextPage").on("click",function(){
+		if(currentPage == totalPage){
+            alert("已经是最后一页数据");
+            return
+        }else{
+    		$.ajax({
+    	        type: "post",
+    	        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+    	        data: {pageSize: 5, currentPage: currentPage+1},
+    	        success: function (result) {
+    				tohtml(result);
+    	        }
+    		});        	  
+        }
+	});
+	
+	//上一页
+	$("#previousPage").on("click",function(){
+		$.ajax({
+	        type: "post",
+	        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+	        data: {pageSize: 5, currentPage: currentPage-1},
+	        success: function (result) {
+				tohtml(result);
+	        }
+		});
+	});
+	
+	//最后一页
+	$("#lastPage").on("click",function(){
+		$.ajax({
+	        type: "post",
+	        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+	        data: {pageSize: 5, currentPage: totalPage},
+	        success: function (result) {
+				tohtml(result);
+	        }
+		});
+	});
+	
 });
 </script>
 </head>
 <body>
 	<div class ="pager">
 		<a href="javascript:void(0)" id="firstPage" >首页</a>
-		<a href="javascript:void(0);" onclick="previousPage();" >上一页</a>
-		<a href="javascript:void(0);" onclick="nextPage();" >下一页</a>
-		<a href="javascript:void(0);" onclick="lastPage();" >尾页</a>
+		<a href="javascript:void(0)" id="previousPage" >上一页</a>
+		<a href="javascript:void(0)" id="nextPage" >下一页</a>
+		<a href="javascript:void(0)" id="lastPage" >尾页</a>
 	</div>
 <!-- 	<div class="pager-info">
          当前页数：<span>$!pager.currentPage</span>

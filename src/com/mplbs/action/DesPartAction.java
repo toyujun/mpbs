@@ -53,6 +53,16 @@ public class DesPartAction extends BaseAction<DesPart> {
 	
 	private int currentPage;
 	private int pageSize;
+	
+	
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	/**
 	 * 分页查询
 	 * @return
@@ -72,7 +82,7 @@ public class DesPartAction extends BaseAction<DesPart> {
 	    //JSONArray----将数组或者集合对象转为json
 	    JsonConfig jsonConfig = new JsonConfig();
 	    //指定哪些属性不需要转json
-	    jsonConfig.setExcludes(new String[]{"currentPage","detachedCriteria","pageSize","total"});
+	    jsonConfig.setExcludes(new String[]{"detachedCriteria"});
 	    String json = JSONObject.fromObject(pageBean,jsonConfig).toString();
 	    ServletActionContext.getResponse().setContentType("text/json;charset=utf-8");
 	    ServletActionContext.getResponse().getWriter().print(json);
