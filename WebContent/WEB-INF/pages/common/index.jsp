@@ -19,13 +19,14 @@ $(function(){
 	    type:'Post',  
 	    dataType:'json',  
 	    success:function(data){
+	    var data2 = eval(data);
 		var menuhtml = "";
-	    	for(var i=0; i<data.length; i++){
+	    	for(var i=0; i<data2.length; i++){
 	    		
 	    		//加载一级菜单
-	    		menuhtml += '<li class="nav-item"><a href="#"><span>' +data[i].daleimc+ '</span></a><ul>';
+	    		menuhtml += '<li class="nav-item"><a href="#"><span>' +data2[i].daleimc+ '</span></a><ul>';
 	    	    
-				var child = data[i].childMenu;
+				var child = data2[i].childMenu;
 	    	    //二级菜单
 	    	    for(var j=0; j<child.length; j++){
 	    	    	menuhtml +=  '<li> <a href="#"> <span>' + child[j].daleimc + '</span> </a> </li>';

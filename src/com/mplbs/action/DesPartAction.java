@@ -29,7 +29,7 @@ public class DesPartAction extends BaseAction<DesPart> {
 	
 	public String savePart() {
 		desPartService.save(model);
-		return null;
+		return NONE;
 	}
 	
 	//显示所有数据

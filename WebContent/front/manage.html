@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 <!-- css公共文件 -->	
 	<link rel="stylesheet" href="css/manage.css">
+<script type="text/javascript" src="../js/despart.js"></script>
 <script type="text/javascript">
 $(function(){
 	var currentPage;
@@ -19,14 +20,8 @@ $(function(){
 	var tatalPage;
 	var pageSize;
 	
-	$.ajax({                 /*页面初始加载到第一页 */
-        type: "post",
-        url: '${pageContext.request.contextPath}/desPartAction_page.action',
-        data: {pageSize: 5, currentPage: 1},
-        success: function (result) {
-			tohtml(result);
-        }
-    });
+	/*页面初始加载到第一页 */
+	despart();
 	
 	function tohtml(jdata){          /* 拼接表格数据的html */
     	$(".content").empty();
@@ -38,12 +33,13 @@ $(function(){
         var content = '';
         content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>图纸</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th></tr>';
         for (var i = 0; i < items.length; i++) {
-            content += '<tr><td>' + items[i].id + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
+            content += '<tr><td>' + (i+1+(currentPage-1)*pageSize) + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
             '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
             '</td><td>' + items[i].time + '</td></tr>';
         }
         content += '</table>'; 
         $(".content").append(content);
+        $("#pageState").html(currentPage+'/'+totalPage);
 	};
 	
 	//首页
@@ -62,7 +58,7 @@ $(function(){
 	//下一页
 	$("#nextPage").on("click",function(){
 		if(currentPage == totalPage){
-            alert("已经是最后一页数据");
+            alert("已经是最后一页");
             return
         }else{
     		$.ajax({
@@ -78,14 +74,19 @@ $(function(){
 	
 	//上一页
 	$("#previousPage").on("click",function(){
-		$.ajax({
-	        type: "post",
-	        url: '${pageContext.request.contextPath}/desPartAction_page.action',
-	        data: {pageSize: 5, currentPage: currentPage-1},
-	        success: function (result) {
-				tohtml(result);
-	        }
-		});
+		if(currentPage == 1){
+            alert("已经是第一页");
+            return
+        }else{
+			$.ajax({
+		        type: "post",
+		        url: '${pageContext.request.contextPath}/desPartAction_page.action',
+		        data: {pageSize: 5, currentPage: currentPage-1},
+		        success: function (result) {
+					tohtml(result);
+		        }
+			});
+        }
 	});
 	
 	//最后一页
@@ -107,6 +108,7 @@ $(function(){
 	<div class ="pager">
 		<a href="javascript:void(0)" id="firstPage" >首页</a>
 		<a href="javascript:void(0)" id="previousPage" >上一页</a>
+		<span>当前</span><sapn id="pageState"></sapn><span>页</span>
 		<a href="javascript:void(0)" id="nextPage" >下一页</a>
 		<a href="javascript:void(0)" id="lastPage" >尾页</a>
 	</div>
