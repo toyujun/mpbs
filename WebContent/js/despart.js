@@ -1,3 +1,45 @@
+var currentPage;
+if(!currentPage){
+	currentPage = 1;
+}
+var totalPage;
+var pageSize;
+
+/*页面初始加载到第一页 */
+despart(5,1,tohtml);
+
+
+//首页
+function first(){
+	despart(5,1,tohtml);
+};
+
+//下一页
+function next(){
+	if(currentPage == totalPage){
+        alert("已经是最后一页");
+        return
+    }else{
+    	despart(5,currentPage+1,tohtml);     	  
+    }
+}
+
+//上一页
+function before(){
+	if(currentPage == 1){
+        alert("已经是第一页");
+        return
+    }else{
+    	despart(5,currentPage-1,tohtml);
+    }
+};
+
+//最后一页
+function last(){
+	despart(5,totalPage,tohtml);
+};
+
+
 function despart(pagesize, currentpage,tohtml) {
 	$.ajax({ /* 页面初始加载到第一页 */
 		type : "post",

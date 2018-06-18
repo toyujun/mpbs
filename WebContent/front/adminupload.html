@@ -1,35 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>管理员上传文件</title>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
 
-<script type="text/javascript">
-$(function(){
-	
-	$('#uploadform').submit(function() {
-		alert(1);
- 		var mydate = new Date();
-		mydate.toLocaleString( ); //获取日期与时间
-		$("#time").attr("value",mydate);
-		alert(mydate); 
-	};
-})
-</script>
-</head>
-<body>
-<form id="uploadform" name="uploadform" method="post" class="upform"
-        action="desPartAction_savePart.action">
-	<ul>
-		<!-- <li><span>上传3D图档文件：</span><input name="drawing" type="text" id="drawing"  class="SearchKeyword"></li> -->
-		<li><span>零件名称：</span><input name="name" type="text" id="partname" class="SearchKeyword"></li>
-		<li><span>描述：</span><input name="descb" type="text" id="description" class="SearchKeyword"></li>
+<head>
+	<meta charset="UTF-8">
+	<title>管理员上传文件</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+
+	<script type="text/javascript">
+		$(".tijiao").on("click", function () {
+			window.location.href='manage.html';
+			$.ajax({ 
+				type : "post",
+				url : '${pageContext.request.contextPath}/desPartAction_savePart.action',
+				data : {
+					name : $("#partname"),
+					descb : $("#description"),
+					creater : 1,
+					time: timing
+				},
+				success : function(result) {
+					 
+				}
+			});
+		})
+		var now = new Date();
 		
-		<li><button class="tijiao">提交</button></li>
-	</ul>
-</form>
-	
+		timing = formatDate(now);
+		
+		function formatDate(d) {
+			var year = d.getFullYear(),
+				month = d.getMonth() + 1,
+				date = d.getDate(),
+				hour = d.getHours(),
+				minute = d.getMinutes(),
+				second = d.getSeconds();
+			month = month < 10 ? '0' + month : month;
+			date = date < 10 ? '0' + date : date;
+			hour = hour < 10 ? '0' + hour : hour;
+			minute = minute < 10 ? '0' + minute : minute;
+			second = second < 10 ? '0' + second : second;
+			return year + '-' + month + '-' + date + ' ' + hour + ':' + minute + ':' + second;
+		}
+	</script>
+</head>
+
+<body>
+	<form id="uploadform" name="uploadform" method="post" class="upform" action="desPartAction_savePart.action">
+		<ul>
+			<!-- <li><span>上传3D图档文件：</span><input name="drawing" type="text" id="drawing"  class="SearchKeyword"></li> -->
+			<li>
+				<span>零件名称：</span>
+				<input name="name" type="text" id="partname" class="SearchKeyword">
+			</li>
+			<li>
+				<span>描述：</span>
+				<input name="descb" type="text" id="description" class="SearchKeyword">
+			</li>
+			<li style="display: none;">
+				<span>创建者：</span>
+				<input name="creater" type="text" id="creater" class="SearchKeyword">
+			</li>
+
+			<li>
+				<button class="tijiao">提交</button>
+			</li>
+		</ul>
+	</form>
+
 </body>
+
 </html>

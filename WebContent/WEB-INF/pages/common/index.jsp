@@ -12,7 +12,9 @@
 	<link rel="stylesheet" href="css/normalize.css">
 <!-- css公共文件 -->	
 	<link rel="stylesheet" href="css/base.css">
-	<script type="text/javascript" src="${pageContext.request.contextPath }/js/despart.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/manage.css">
+
+	
 <script type="text/javascript">
 $(function(){ 
 	$.ajax({  				//加载左侧面板
