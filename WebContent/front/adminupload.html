@@ -4,11 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>管理员上传文件</title>
-	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
 
 	<script type="text/javascript">
+		
+		var now = new Date();
+		
+		var timing = formatDate(now);
 		$(".tijiao").on("click", function () {
-			window.location.href='manage.html';
+			alert("111");
 			$.ajax({ 
 				type : "post",
 				url : '${pageContext.request.contextPath}/desPartAction_savePart.action',
@@ -19,13 +22,11 @@
 					time: timing
 				},
 				success : function(result) {
-					 
+					window.location.href='manage.html';
 				}
 			});
 		})
-		var now = new Date();
 		
-		timing = formatDate(now);
 		
 		function formatDate(d) {
 			var year = d.getFullYear(),
@@ -45,7 +46,7 @@
 </head>
 
 <body>
-	<form id="uploadform" name="uploadform" method="post" class="upform" action="desPartAction_savePart.action">
+	<form id="uploadform" name="uploadform" method="post" class="upform">
 		<ul>
 			<!-- <li><span>上传3D图档文件：</span><input name="drawing" type="text" id="drawing"  class="SearchKeyword"></li> -->
 			<li>
@@ -63,6 +64,7 @@
 
 			<li>
 				<button class="tijiao">提交</button>
+				<button class="test">ceshi</button>
 			</li>
 		</ul>
 	</form>
