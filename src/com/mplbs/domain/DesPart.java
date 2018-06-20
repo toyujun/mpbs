@@ -10,7 +10,7 @@ public class DesPart {
 	private String descb;
 	private String creater;
 	private Integer sta;
-	private Date time;
+	private String time;
 	
 	public Integer getId() {
 		return id;
@@ -48,10 +48,10 @@ public class DesPart {
 	public void setSta(Integer sta) {
 		this.sta = sta;
 	}
-	public Date getTime() {
+	public String getTime() {
 		return time;
 	}
-	public void setTime(Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	

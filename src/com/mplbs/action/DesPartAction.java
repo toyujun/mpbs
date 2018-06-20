@@ -29,6 +29,14 @@ public class DesPartAction extends BaseAction<DesPart> {
 	
 	public String savePart() {
 		desPartService.save(model);
+		String msg = "保存成功！！！";
+		ServletActionContext.getResponse().setContentType("text/html;charset=utf-8");
+		try {
+			ServletActionContext.getResponse().getWriter().print(msg);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return NONE;
 	}
 	

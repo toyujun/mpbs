@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>上传管理</title>
 <script type="text/javascript">
+$(function(){
 	var currentPage;
 	if(!currentPage){
 		currentPage = 1;
@@ -68,16 +69,24 @@
 	    currentPage = res.currentPage;   //当前页
 	    totalPage = Math.ceil(res.total / res.pageSize);   //计算总页数
 	    var content = '';
-	    content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>图纸</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th></tr>';
+	    content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th><th>图纸</th></tr>';
 	    for (var i = 0; i < items.length; i++) {
-	        content += '<tr><td>' + (i+1+(currentPage-1)*pageSize) + '</td><td>' + items[i].name + '</td><td>' + items[i].drawing + 
+	        content += '<tr><td>' + (i+1+(currentPage-1)*pageSize) + '</td><td>' + items[i].name + 
 	        '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
-	        '</td><td>' + items[i].time + '</td></tr>';
+	        '</td><td>' + items[i].time + '</td><td>' + '<a data-cad="true" data-type="" href="javascript:void(0);" data-url="1111111">' + 
+	        '<img alt="" name="ImageCADViewer" src="/images/cad_icon.gif" title="'+ items[i].drawing + '" /></a>' + '</td></tr>';
 	    }
 	    content += '</table>'; 
 	    $(".content").append(content);
 	    $("#pageState").html(currentPage+'/'+totalPage);
 	};
+	//弹出图形预览窗口	
+    $('[data-url]').click(function() {
+        var fn = $(this).data('url');
+        //window[fn]();
+        alert(fn);
+    });
+})
 
 </script>
 

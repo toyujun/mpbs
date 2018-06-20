@@ -6,29 +6,32 @@
 	<title>管理员上传文件</title>
 
 	<script type="text/javascript">
-		
-		var now = new Date();
-		
-		var timing = formatDate(now);
 		$(".tijiao").on("click", function () {
-			alert("111");
+			var cname = $("#partname").val();
+			var cdescb = $("#description").val();
+			var now = new Date();
+			var timing = formatDate(now); 
+			console.log(cname);
 			$.ajax({ 
 				type : "post",
+				/* dataType: "text", */
+				/* contentType: "application/x-www-form-urlencoded; charset=utf-8", */
 				url : '${pageContext.request.contextPath}/desPartAction_savePart.action',
 				data : {
-					name : $("#partname"),
-					descb : $("#description"),
+					name : cname,
+					descb : cdescb,
 					creater : 1,
-					time: timing
+					time: timing 
 				},
-				success : function(result) {
-					window.location.href='manage.html';
+				success : function(msg) {
+					/* window.location.href='./manage.html'; */
+					alert("111111");
 				}
 			});
 		})
 		
 		
-		function formatDate(d) {
+ 		function formatDate(d) {
 			var year = d.getFullYear(),
 				month = d.getMonth() + 1,
 				date = d.getDate(),
@@ -41,7 +44,7 @@
 			minute = minute < 10 ? '0' + minute : minute;
 			second = second < 10 ? '0' + second : second;
 			return year + '-' + month + '-' + date + ' ' + hour + ':' + minute + ':' + second;
-		}
+		} 
 	</script>
 </head>
 
@@ -51,20 +54,20 @@
 			<!-- <li><span>上传3D图档文件：</span><input name="drawing" type="text" id="drawing"  class="SearchKeyword"></li> -->
 			<li>
 				<span>零件名称：</span>
-				<input name="name" type="text" id="partname" class="SearchKeyword">
+				<input name="name" type="text" id="partname">
 			</li>
 			<li>
 				<span>描述：</span>
-				<input name="descb" type="text" id="description" class="SearchKeyword">
+				<input name="descb" type="text" id="description">
 			</li>
 			<li style="display: none;">
 				<span>创建者：</span>
-				<input name="creater" type="text" id="creater" class="SearchKeyword">
+				<input name="creater" type="text" id="creater">
 			</li>
 
 			<li>
 				<button class="tijiao">提交</button>
-				<button class="test">ceshi</button>
+				<button class="test">ceshi7</button>
 			</li>
 		</ul>
 	</form>

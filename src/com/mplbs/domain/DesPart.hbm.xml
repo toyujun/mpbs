@@ -22,8 +22,8 @@
         <property name="sta" type="java.lang.Integer">
             <column name="sta" length="4" />
         </property>
-        <property name="time" type="java.util.Date">
-            <column name="time" length="0" />
+        <property name="time" type="java.lang.String">
+            <column name="time" length="20" />
         </property>
     </class>
 </hibernate-mapping>
