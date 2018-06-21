@@ -9,10 +9,18 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
 <!-- css初始化文件 -->	
-	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/normalize.css">
 <!-- css公共文件 -->	
-	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/base.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/css/manage.css">
+
+	<script src="${pageContext.request.contextPath }/js/three.js"></script>
+    <script src="${pageContext.request.contextPath }/js/STLLoader.js"></script>
+
+    <script src="${pageContext.request.contextPath }/js/TrackballControls.js"></script>
+
+    <script src="${pageContext.request.contextPath }/js/Detector.js"></script>
+    <script src="${pageContext.request.contextPath }/js/stats.min.js"></script>
 
 	
 <script type="text/javascript">
