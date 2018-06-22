@@ -15,28 +15,40 @@
             margin: 0px;
             overflow: hidden;
         } */
-
+		.v_w {
+			color: #000;
+            font-family: Monospace;
+            font-size: 13px;
+            text-align: center;
+            font-weight: bold;
+            background-color: #fff;
+            margin: 0px;
+            overflow: hidden;
+		}
         #info {
             color: #000;
             position: absolute;
-            top: 0px;
-            width: 100%;
-            padding: 5px;
+            width: 400px;
+            margin: 0px 160px 15px 160px;
         }
 
         #info a {
             color: red;
         }
+        #content {
+        	width: 720px;
+        }
     </style>
 </head>
 
 <body>
-    <div id="info">
-        <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - trackball controls example
-        <br /> MOVE mouse &amp; press LEFT/A: rotate, MIDDLE/S: zoom, RIGHT/D: pan
-    </div>
+	<div class="v_w">
+		<div id="info">
+		<br /> 按住左键移动: 旋转, 中间滚轮: 缩放, 右键: 拖动
+		</div>
+		<div id="content"></div>
 
-<!--     <script src="../js/three.js"></script>
+<!-- 	<script src="../js/three.js"></script>
     <script src="../js/STLLoader.js"></script>
 
     <script src="../js/TrackballControls.js"></script>
@@ -54,7 +66,7 @@
             scene = new THREE.Scene();
             scene.background = new THREE.Color(0xcccccc);
 
-            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera = new THREE.PerspectiveCamera(60, 720 / 500, 1, 1000);
             // camera.position.z = 25;
             camera.position.set(0, 0, 25);
 			camera.lookAt(scene.position);
@@ -85,10 +97,10 @@
             //     mesh.matrixAutoUpdate = false;
             //     scene.add(mesh);
             // }
-
+            
             //导入dayan.stl
             loader = new THREE.STLLoader();
-            loader.load('../images/panelscrew_m6x16.stl', function (geometry) {
+            loader.load('panelscrew_m6x16.stl', function (geometry) {
 
                 material = new THREE.MeshPhongMaterial({
                     color: 0xffffff,
@@ -121,11 +133,14 @@
             renderer = new THREE.WebGLRenderer({
                 antialias: true
             });
+            container = $('#content');
+			
             renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-            stats = new Stats();
-            document.body.appendChild(stats.dom);
+            renderer.setSize(720, 500);
+            /* document.body.appendChild(renderer.domElement); */
+            container.append(renderer.domElement);
+/*             stats = new Stats();
+            container.append(stats.dom); */
             //
             window.addEventListener('resize', onWindowResize, false);
             //
@@ -147,9 +162,10 @@
 
         function render() {
             renderer.render(scene, camera);
-            stats.update();
+/*             stats.update(); */
         }
     </script>
-
-</body>
+	
+	</div>
+ </body>
 </html>

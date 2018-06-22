@@ -14,7 +14,7 @@
 
 .navigationPane { /*  浮动的左侧导航面板 */
 	width:150px;
-	height:100%;
+	height:650px;
 	float: left;
 	background-color:#D5D6E2;
 }

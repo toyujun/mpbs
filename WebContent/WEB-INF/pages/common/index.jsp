@@ -20,7 +20,7 @@
     <script src="${pageContext.request.contextPath }/js/TrackballControls.js"></script>
 
     <script src="${pageContext.request.contextPath }/js/Detector.js"></script>
-    <script src="${pageContext.request.contextPath }/js/stats.min.js"></script>
+<%--     <script src="${pageContext.request.contextPath }/js/stats.min.js"></script> --%>
 
 	
 <script type="text/javascript">
