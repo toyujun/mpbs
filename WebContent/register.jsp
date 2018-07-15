@@ -26,7 +26,8 @@
 	                    <li><span>请输入密码：</span><input type="password" name="password" id="password" placeholder="密码" class="SearchKeyword2"></li>
 	                    <li><span>请输入Email地址：</span><input name="email" type="text" id="email" placeholder="Email地址" class="SearchKeyword"></li>
 	                    <li><span>请输入电话号码：</span><input name="telephone" type="text" id="telephone" placeholder="电话号码" class="SearchKeyword"></li>
-	                    <li><span>请选择性别：</span><input name="gender" type="radio" id="sexman" value="m">男
+	                    <li><span>请选择性别：</span>
+	                    <input name="gender" type="radio" id="sexman" value="m">男
 	                    <input name="gender" type="radio" id="sexwoman" value="w" >女
                     	</li>
 	                    <div id="errormessage"><s:actionerror/></div>

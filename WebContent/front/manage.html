@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>上传管理</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<link rel="stylesheet" href="../css/manage.css">
+	
+	<script src="../js/three.js"></script>
+    <script src="../js/STLLoader.js"></script>
+    <script src="../js/TrackballControls.js"></script>
+    <script src="../js/Detector.js"></script>
+	
 <style>
      .black_overlay { 
         display: none; 
@@ -114,7 +122,7 @@ function tohtml(jdata){          /* 拼接表格数据的html */
         content += '<tr><td>' + (i+1+(currentPage-1)*pageSize) + '</td><td>' + items[i].name + 
         '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta + 
         '</td><td>' + items[i].time + '</td><td>' + '<a class="cadview" data-type="" href="javascript:view3d();" data-url="1111111">' + 
-        '<img alt="" id="ImageCADViewer" src="./images/cad_icon.gif" title="'+ items[i].drawing + '" /></a>' + '</td></tr>';
+        '<img alt="" id="ImageCADViewer" src="../images/cad_icon.gif" title="'+ items[i].drawing + '" /></a>' + '</td></tr>';
     }
     content += '</table>'; 
     $(".content").append(content);
@@ -126,7 +134,7 @@ function tohtml(jdata){          /* 拼接表格数据的html */
 		$('#light').show();
         $('#fade').show();
         $('.viewbox').empty();
-        $('.viewbox').load("./front/view3d.html");
+        $('.viewbox').load("./view3d.html");
 		
 	}
 //关闭图形预览窗口
@@ -135,10 +143,8 @@ function tohtml(jdata){          /* 拼接表格数据的html */
 		$('#light').hide();
         $('#fade').hide();
 	}
-
-
-
 </script>
+
 
 </head>
 <body>

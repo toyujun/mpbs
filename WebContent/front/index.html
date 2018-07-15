@@ -10,15 +10,6 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 <!-- css公共文件 -->	
 	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/manage.css">
-
-	<script src="../js/three.js"></script>
-    <script src="../js/STLLoader.js"></script>
-
-    <script src="../js/TrackballControls.js"></script>
-
-    <script src="../js/Detector.js"></script>
-
 	
 <script type="text/javascript">
 	$(function () {
@@ -51,20 +42,20 @@
 
 		});
 
-		$(".contentPane").load("front/mainpage.html"); //初始化内容显示区域
+		$(".contentPane").load("../front/mainpage.html"); //初始化内容显示区域
 
 		$(".fr").on("click", "a", function () {  //顶部导航栏
 			$(".contentPane").empty();
 			var sId = $(this).data("id"); //获取单击id值
 			switch (sId) {
 				case "mainpage":
-					var pathn = "front/mainpage.html";
+					var pathn = "../front/mainpage.html";
 					break;
 				case "upload":
-					var pathn = "front/adminupload.html";
+					var pathn = "../front/adminupload.html";
 					break;
 				case "manage":
-					var pathn = "front/manage.html";
+					var pathn = "../front/manage.html";
 					break;
 
 			}
@@ -204,11 +195,19 @@
 				<td width="96" class="menuItem" align="center" valign="top" ><a href="development.asp">技术问答</a></td>
 				<td width="96" class="menuItem" align="center" valign="top" ><a href="news.asp">新闻&amp;媒体</a></td>
 				<td width="82" class="menuItem" align="center" valign="top" ><a href="hr.asp">人力资源</a></td>
-			 	<td width="360" align="right" style="background:url(../images/bg_search.jpg) right 14px no-repeat ;" onmouseover="MM_showHideLayers('Layer1','hide','Layer2','hide','Layer3','hide')">
+			 	<td width="260" align="right" style="background:url(../images/bg_search.jpg) right 14px no-repeat ;">
 					<input id="k" name="k" maxlength="10" class="textStyle" />
 				</td>
-				<td>
+				<td width="100">
 					<input type="image" src="../images/search.jpg" />
+				</td>
+				<td align="right">
+				<a href="../login.jsp">
+					<button class="tijiao">登录</button>
+				</a>					
+				</td>
+				<td align="right">
+					<a href="../register.jsp">注册新用户</a>
 				</td>
 			</tr>
 			
@@ -230,20 +229,29 @@
 					</div>
 				</td>
 				<td width="73">
-					<div class="subMenuInit" id="Layer2" onmouseover="MM_Layers('over','Layer2');" onmouseout="MM_Layers('out','Layer2');">
-						<div class="subMenuApp">
-							<ul>
-								<li><a href="#">公司概况</a></li>
-								<li><a href="#">发展历程</a></li>
-								<li><a href="#">资质荣誉</a></li>
-								<li><a href="#">合作伙伴</a></li>
-								<li><a href="#">联系我们</a></li>
-							</ul>
+					<div class="subMenuPro" id="Layer2" onmouseover="MM_Layers('over','Layer2');" onmouseout="MM_Layers('out','Layer2');">
+						<div class="proItem">
+							<a href="../front/manage.html"><img src="../images/nut.jpg"
+								width="153" height="146" /></a>
+						</div>
+						<div class="proItem">
+							<a href="productlist.asp?tid=2"><img
+								src="proimg/coupling.jpg" width="153" height="146" /></a>
+						</div>
+						<div class="proItem">
+							<a href="productlist.asp?tid=3"><img src="proimg/tools.jpg"
+								width="153" height="146" /></a>
+						</div>
+						<div class="proItem">
+							<a href="productlist.asp?tid=4"><img src="proimg/yamao.jpg"
+								width="153" height="146" /></a>
 						</div>
 					</div>
 				</td>
 				<td width="80">
-					<div class="subMenuInit" id="Layer3" onmouseover="MM_Layers('over','Layer3');" onmouseout="MM_Layers('out','Layer3');">
+					<div class="subMenuInit" id="Layer3"
+						onmouseover="MM_Layers('over','Layer3');"
+						onmouseout="MM_Layers('out','Layer3');">
 						<div class="subMenuApp">
 							<ul>
 								<li><a href="#">汽车工业</a></li>
