@@ -1,9 +1,0 @@
-blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul {
-	margin: 0;
-	padding: 0;
-}
-
-
-/* 表格 */
-#generatedTable,#generatedTable tr th, #generatedTable tr td { border:1px solid #C7C7C7; background-color: #F0FFFF; }
-#generatedTable {width: 800px; min-height: 25px; line-height: 25px; text-align: center; padding:1px;}
