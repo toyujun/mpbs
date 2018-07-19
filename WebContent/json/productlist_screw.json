@@ -1,6 +1,7 @@
 {
-    "pageSize":20,
+    "total":20,
     "rows":[
+        {"id":"1","bnstandard":"272-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"8.8","surface":"","drawing":"./"},
         {"id":"2","bnstandard":"272-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"8.8","surface":"发黑","drawing":"./"},
         {"id":"3","bnstandard":"3-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"","surface":"蓝色镀锌","drawing":"./"},
         {"id":"4","bnstandard":"3-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"8.8","surface":"蓝色镀锌","drawing":"./"},
@@ -19,6 +20,6 @@
         {"id":"17","bnstandard":"5265-DIN912","descb":"内六角圆柱头螺钉 部分螺纹","material":"钢","hardness":"","surface":"黄色镀锌","drawing":"./"},
         {"id":"18","bnstandard":"5265-DIN912","descb":"内六角圆柱头螺钉 部分螺纹","material":"钢","hardness":"8.8","surface":"黄色镀锌","drawing":"./"},
         {"id":"19","bnstandard":"7-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"","surface":"发黑","drawing":"./"},
-        {"id":"20","bnstandard":"7-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":12.9,"surface":"发黑","drawing":"./"}
+        {"id":"20","bnstandard":"7-DIN912","descb":"圆柱头螺钉 全螺纹","material":"钢","hardness":"12.9","surface":"发黑","drawing":"./"}
     ]
-,"drawing":"./"}
+}

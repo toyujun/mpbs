@@ -8,56 +8,12 @@
     <title>产品列表</title>
 
     <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
-    <link rel="stylesheet" href="../css/manage.css">
+    <link rel="stylesheet" href="../css/base.css">
     <script src="../js/three.js"></script>
     <script src="../js/STLLoader.js"></script>
     <script src="../js/TrackballControls.js"></script>
     <script src="../js/Detector.js"></script>
 </head>
-
-<style>
-    .black_overlay {
-        display: none;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        z-index: 1001;
-        -moz-opacity: 0.8;
-        opacity: .50;
-        filter: alpha(opacity=88);
-    }
-
-    .white_content {
-        display: none;
-        position: absolute;
-        top: 25%;
-        left: 30%;
-        width: 720px;
-        height: 525px;
-        padding: 0;
-        border: 1px solid orange;
-        background-color: white;
-        z-index: 1002;
-        overflow: auto;
-    }
-
-    .viewclose {
-        width: 40px;
-        height: 20px;
-        position: float;
-        z-index: 1002;
-    }
-
-    .viewbox {
-        padding: 0;
-        width: 720px;
-        height: 500px;
-        margin: 5px auto 0px auto;
-    }
-</style>
 
 <script>
     var currentPage;
@@ -66,7 +22,6 @@
     }
     var totalPage;
     var pageSize;
-
     /*页面初始加载到第一页 */
     despart(5, 1, tohtml);
 
@@ -103,37 +58,34 @@
 
 
     function despart(pagesize, currentpage, tohtml) {
+    	pageSize = pagesize;
+    	currentPage = currentpage;
         $.ajax({ /* 页面初始加载到第一页 */
             type: "post",
-            url: '${pageContext.request.contextPath}/desPartAction_page.action',
-            data: {
-                pageSize: pagesize,
-                currentPage: currentpage
-            },
+            url: '../json/productlist_screw.json',
+            data: {},
             success: function (result) {
-            	console.log(result);
                 tohtml(result);
             }
         });
     }
 
     function tohtml(jdata) {          /* 拼接表格数据的html */
-        $(".content").empty();
+        $(".contentTab").empty();
         var res = eval(jdata);
         var items = res.rows;          //jason数组中取要显示的表格数据
-        pageSize = res.pageSize;       //每页大小
-        currentPage = res.currentPage;   //当前页
-        totalPage = Math.ceil(res.total / res.pageSize);   //计算总页数
+        var firstResult = (currentPage - 1) * pageSize;
+        totalPage = Math.ceil(res.total / pageSize);   //计算总页数
         var content = '';
-        content += '<table id="generatedTable"><tr><th>序号</th><th>零件名</th><th>描述</th><th>创建者</th><th>状态</th><th>创建时间</th><th>图纸</th></tr>';
-        for (var i = 0; i < items.length; i++) {
-            content += '<tr><td>' + (i + 1 + (currentPage - 1) * pageSize) + '</td><td>' + items[i].name +
-                '</td><td>' + items[i].descb + '</td><td>' + items[i].creater + '</td><td>' + items[i].sta +
-                '</td><td>' + items[i].time + '</td><td>' + '<a class="cadview" data-type="" href="javascript:view3d();" data-url="1111111">' +
+        content += '<table id="generatedTable"><tr><th>序号</th><th>BN - 标准</th><th>描述</th><th>材质</th><th>强度等级</th><th>表面处理</th><th>图纸</th></tr>';
+        for (var i = firstResult; i < firstResult+pageSize; i++) {
+            content += '<tr><td>' + (i+1) + '</td><td>' + items[i].bnstandard +
+                '</td><td>' + items[i].descb + '</td><td>' + items[i].material + '</td><td>' + items[i].hardness +
+                '</td><td>' + items[i].surface + '</td><td>' + '<a class="cadview" data-type="" href="javascript:view3d();" data-url="1111111">' +
                 '<img alt="" id="ImageCADViewer" src="../images/cad_icon.gif" title="' + items[i].drawing + '" /></a>' + '</td></tr>';
         }
         content += '</table>';
-        $(".content").append(content);
+        $(".contentTab").append(content);
         $("#pageState").html(currentPage + '/' + totalPage);
     };
 
@@ -154,6 +106,19 @@
 </script>
 
 <body>
+	<div class="productLeftNav">
+        <div class="leftNav">
+            产品列表
+        </div>
+        <div class="leftNavList">
+            <ul>
+                <li><a>防松螺母</a></li>
+                <li><a>防松螺钉</a></li>
+                <li><a>防松垫圈</a></li>
+                <li><a>防松铆钉</a></li>
+            </ul>
+        </div>
+	</div>
     <div class="pager">
         <a href="javascript:first()" id="firstPage">首页</a>
         <a href="javascript:before()" id="previousPage">上一页</a>
@@ -171,7 +136,7 @@
     </div>
     <div id="fade" class="black_overlay"></div>
 
-    <div class="content"></div>
+    <div class="contentTab"></div>
 </body>
 
 </html>

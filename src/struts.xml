@@ -13,7 +13,7 @@
 			<interceptor name="mpLoginInterceptor"
 				class="com.mplbs.action.interceptor.MPLoginInterceptor">
 				<!-- 指定哪些方法不需要拦截 -->
-				<param name="excludeMethods">page,login,register</param>
+				<param name="includeMethods"></param>
 			</interceptor>
 			<!-- 定义拦截器栈 -->
 			<interceptor-stack name="myStack">
