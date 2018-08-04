@@ -1,5 +1,5 @@
 # mpbs
-Manufature company browser web system
+Manufature company index with product browser web system
 ## Structure:
 ```
 .
