@@ -1,574 +1,319 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" href="./favicon.ico"  type="image/x-icon"/>
-<title>Lock&Lock（中国）公司</title>
- 
-<!-- 导入jquery核心类库 -->
-<script type="text/javascript"
-	src="../js/jquery-1.8.3.js"></script>
-<!-- css初始化文件 -->	
-	<link rel="stylesheet" href="../css/normalize.css">
-<!-- css公共文件 -->	
-	<link rel="stylesheet" href="../css/base.css">
-	
-<script type="text/javascript">
-	$(function () {
-/* 		$.ajax({  				//加载左侧面板
-			url: '${pageContext.request.contextPath }/menuAction_getMenu.action',
-			type: 'Post',
-			dataType: 'json',
-			success: function (data) {
-				var data2 = eval(data);
-				var menuhtml = "";
-				for (var i = 0; i < data2.length; i++) {
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Lock&Lock（中国）公司</title>      
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/mplbs_index.css" />
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--最顶部块-->
+    <div class="navtop hidden-xs hidden-sm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-3">
+            <a href="javascript:;" class="mp_code">
+              <img src="../images/weixin.png">
+              <span>官方微信</span>
+              <span class="glyphicon glyphicon-menu-down"></span>
+              <img class="scanimg" src="../images/1531573973.png" >
+            </a>&nbsp;
+            <a href="javascript:;" class="mp_code">
+                <img src="../images/weibo.png">
+                <span>官方微博</span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+                <img class="scanimg" src="../images/1531573973.png">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="javascript:;" class="nav-dail">
+              <span>免费咨询</span>
+              <span class="glyphicon glyphicon-phone-alt"></span>
+              <span>800800800</span>&nbsp;
+              <img src="../images/en.jpg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--LOGO-->
+    <div class="navlogo">
+      <div class="navlogoL">
+        <a href="index..">
+          <img src="../images/logo-test1.gif" />
+        </a>
+      </div>
+      <div class="navlogoR">
+        <img src="../images/logo-test2.gif" />
+      </div>
+    </div>
+    <!--导航条-->
+      <nav class="navbar navbar-default mp_nav">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-home"></span> 
+              </a>
+            </div>        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">关于我们</a>
+                  <div class="subMenuApp">
+                    <ul>
+                      <li><a href="#">公司概况</a></li>
+                      <li><a href="#">发展历程</a></li>
+                      <li><a href="#">资质荣誉</a></li>
+                      <li><a href="#">合作伙伴</a></li>
+                      <li><a href="#">联系我们</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="productlist.html"><sapn>产品目录</sapn></a>
+                  <div class="subMenuApp2" id="Layer2">
+                      <div class="proItem">
+                        <a href="../front/manage.html"><img src="../images/nut.jpg"
+                          width="153" height="146" /></a>
+                      </div>
+                      <div class="proItem">
+                        <a href="productlist..?tid=2"><img
+                          src="../images/screw.jpg" width="153" height="146" /></a>
+                      </div>
+                      <div class="proItem">
+                        <a href="productlist..?tid=3"><img src="../images/spacer.jpg"
+                          width="153" height="146" /></a>
+                      </div>
+                      <div class="proItem">
+                        <a href="productlist..?tid=4"><img src="../images/nutclip.jpg"
+                          width="153" height="146" /></a>
+                      </div>
+                  </div>
+                </li>
+                <li><a href="#">应用领域</a>
+                  <div class="subMenuApp">
+                      <ul>
+                        <li><a href="#">汽车工业</a></li>
+                        <li><a href="#">铁路机车</a></li>
+                        <li><a href="#">医疗器械</a></li>
+                        <li><a href="#">工程装备</a></li>
+                        <li><a href="#">电子设备</a></li>
+                        <li><a href="#">石油化工</a></li>
+                        <li><a href="#">航空航天</a></li>
+                        <li><a href="#">船舶港口</a></li>
+                      </ul>
+                    </div>
+                </li>  
+                <li><a href="#">营销&服务</a></li>
+                <li><a href="#">技术问答</a></li> 
+                <li><a href="#">新闻&媒体</a></li> 
+                <li><a href="#">人力资源</a></li>                   
+              </ul>
+              <form class="navbar-form navbar-left">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right"><a href="./login.html"><button type="button" class="btn btn-default">登录</button></a>
+              &nbsp<a href="#">新用户注册</a>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+      </nav>
+    <!-- 轮播图 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <a href="javascript:;" class="pcImg" style="background-image: url('../images/1.jpg')">
+            </a>            
+          </div>
+          <div class="item">
+              <a href="javascript:;" class="pcImg" style="background-image: url('../images/2.jpg')">  
+              </a>  
+          </div>
+          <div class="item">
+              <a href="javascript:;" class="pcImg" style="background-image: url('../images/3.jpg')">            
+              </a>  
+          </div>
+          <div class="item">
+              <a href="javascript:;" class="pcImg" style="background-image: url('../images/4.jpg')">              
+              </a>  
+          </div>
+          <div class="item">
+              <a href="javascript:;" class="pcImg" style="background-image: url('../images/5.jpg')">              
+              </a>  
+          </div>
+        </div>
+      
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- 业务介绍 -->
+    <div class="container mp_advantage">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="advanBox">
+            <div class="topImg">
+              <img src="../images/2012730263473499.jpg">
+            </div>
+            <div class="bottomText">
+              <p>Lock&Lock
+                <sup>®</sup>在中国</p>
+              <P>我们将与合作伙伴及用户一起，在中国建设未来！
+                <br>助力中国工业从细微处提高品质，走向世界。
+                <br>发展目标：成为一流的螺纹防松紧固件厂商。</P>
+              <a href="#">查看 》</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="advanBox">
+            <div class="topImg">
+              <img src="../images/20128718305173499.jpg">
+            </div>
+            <div class="bottomText">
+              <p>为何选择Lock&Lock<sup>®</sup></p>
+              <P>Lock®是一种拥有独特螺纹结构设计的自锁型螺纹技术,
+                  从根本上预制和解决螺纹松动脱落的问题。
+                  现在，Lock®技术成为螺纹防止松动的高可靠性技术代表被写进机械设计手册。</P>
+              <a href="#">查看 》</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="advanBox">
+            <div class="topImg">
+              <img src="../images/201291311142873499.jpg">
+            </div>
+            <div class="bottomText">
+              <p>使用Lock&Lock
+                  <sup>®</sup>防松螺母，确保安全紧固</p>
+              <P>Lock&Lock
+                  <sup>®</sup>防松螺母
+                  <br>Lock&Lock
+                  <sup>®</sup>连结副
+                  <br>Lock&Lock
+                  <sup>®</sup>工具系列
+                  <br>Lock&Lock
+                  <sup>®</sup>压铆镶嵌</P>
+              <a href="#">查看 》</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-					//加载一级菜单
-					menuhtml += '<li class="nav-item"><a href="#"><span>' + data2[i].daleimc + '</span></a><ul>';
+    </div>
+    <!-- news -->
+    <div class="container mp_news">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2"><h3 class="mp_nTitle">全部新闻</h3></div>
+        <div class="col-md-1"> 
+          <div class="mp_newLine"></div> 
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span></a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-dashboard"></span></a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-modal-window"></span></a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-hourglass"></span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-7">
+          <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <ul class="mp_newsList">
+                  <li>
+                    <a href="">
+                      <span>2017-08-16&nbsp;</span>热烈祝贺xxx公司获得xxx产业博览会创新奖
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>2017-06-08&nbsp;</span>xxx诉xxxxxx不正当竞争纠纷案
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>2017-03-22&nbsp;</span>Lock&Lock(上海)有限公司荣获2017年度上海市科技型中小企业荣誉称号
+                    </a>
+                  </li>                  
+                  <li>
+                    <a href="">
+                      <span>2016-10-12&nbsp;</span>汽车紧固件的开发、应用和成本分析，Lock&Lock紧固件在汽车行业的应用
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>2016-10-08&nbsp;</span>Lock&Lock(上海)有限公司上海分公司重点项目陆续进驻
+                    </a>
+                  </li>
+                  <li>
+                      <a href="">
+                        <span>2016-03-14&nbsp;</span>上海市xx区区委书记xxx莅临Lock&Lock(上海)有限公司参观指导
+                      </a>
+                    </li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="profile">...</div>
+              <div role="tabpanel" class="tab-pane" id="messages">...</div>
+              <div role="tabpanel" class="tab-pane" id="settings">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="mp_customer">
+      <div class="footcontainer">
+        <h3>合作伙伴</h3>
+        <ul>
+          <li><a href="javascript:;"><img src="../images/customer1.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer2.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer3.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer4.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer5.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer6.jpeg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer7.jpg"/></a></li>
+          <li><a href="javascript:;"><img src="../images/customer8.jpeg"/></a></li>
+        </ul>
 
-					var child = data2[i].childMenu;
-					//二级菜单
-					for (var j = 0; j < child.length; j++) {
-						menuhtml += '<li> <a href="#"> <span>' + child[j].daleimc + '</span> </a> </li>';
-					}
-					menuhtml += '</ul> </li>';
-
-				}
-				$(".nav>ul").append(menuhtml);
-
-			},
-			error: function (data) {
-				alert("加载出错！");
-			}
-
-		}); */
-
-		/* $(".contentPane").load("../front/mainpage.html"); //初始化内容显示区域 */
-
-		$(".navmenu >div").on("click", "a", function () {  //顶部导航栏
-			$(".contentPane").empty();
-			var sId = $(this).data("id"); //获取单击id值
-			var pathn;
-			switch (sId) {
-				case "productlistbtn":
-					pathn = "./productlist.html";
-					break;
-				case "loginbtn":
-					pathn = "./login.html";
-					break;
-				case "registerbtn":
-					pathn = "./register.html";
-					break;
-
-			}
-			$(".contentPane").load(pathn);
-		});
-
-		/*图片滚动播放插件*/ 		
-		$('#demo3').slideBox({
-			duration: 0.3,//滚动持续时间，单位：秒
-			easing: 'linear',//swing,linear//滚动特效
-			delay: 5,//滚动延迟时间，单位：秒
-			hideClickBar: false,//不自动隐藏点选按键
-			clickBarRadius: 10
-		});
-
-		/*新闻滚动播放*/
-		Scroll($("#scrollDiv"), { line: 1, speed: 500, timer: 3000, up: "btn1", down: "btn2" });
-	});
-
-	function Scroll(div,opt) {
-		//参数初始化
-		if (!opt) var opt = {};
-		var _btnUp = $("#" + opt.up);//Shawphy:向上按钮
-		var _btnDown = $("#" + opt.down);//Shawphy:向下按钮
-		var timerID;
-		var _this = div.eq(0).find("ul:first");
-		var lineH = _this.find("li:first").height(), //获取行高
-			line = opt.line, //每次滚动的行数，默认为一屏，即父容器高度
-			speed = opt.speed; //卷动速度，数值越大，速度越慢（毫秒）
-		timer = opt.timer //?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒
-		var upHeight = 0 - line * lineH;
-		//滚动函数
-		var scrollUp = function () {
-			_btnUp.unbind("click", scrollUp); //Shawphy:取消向上按钮的函数绑定
-			_this.animate({
-				marginTop: upHeight
-			}, speed, function () {
-				for (i = 1; i <= line; i++) {
-					_this.find("li:first").appendTo(_this);
-				}
-				_this.css({ marginTop: 0 });
-				_btnUp.bind("click", scrollUp); //Shawphy:绑定向上按钮的点击事件
-			});
-		}
-		//Shawphy:向下翻页函数
-		var scrollDown = function () {
-			_btnDown.unbind("click", scrollDown);
-			for (i = 1; i <= line; i++) {
-				_this.find("li:last").show().prependTo(_this);
-			}
-			_this.css({ marginTop: upHeight });
-			_this.animate({
-				marginTop: 0
-			}, speed, function () {
-				_btnDown.bind("click", scrollDown);
-			});
-		}
-		//Shawphy:自动播放
-		var autoPlay = function () {
-			if (timer) timerID = window.setInterval(scrollUp, timer);
-		};
-		var autoStop = function () {
-			if (timer) window.clearInterval(timerID);
-		};
-		//鼠标事件绑定
-		_this.hover(autoStop, autoPlay).mouseout();
-		_btnUp.css("cursor", "pointer").click(scrollUp).hover(autoStop, autoPlay);//Shawphy:向上向下鼠标事件绑定
-		_btnDown.css("cursor", "pointer").click(scrollDown).hover(autoStop, autoPlay);
-	}
-
-	/* 鼠标经过悬浮菜单 */
-	function MM_Layers(flag, layer) {
-		var selectlayer = '#' + layer;
-		if (flag == 'over') {
-			$(selectlayer).show();
-		}
-		if (flag == 'out') {
-			$(selectlayer).hide();
-		}
-	}
-</script>	
-</head>
-
-<body>
-	<div class="w" id="main">
-		<div class="navtop">
-			<div class="navtopTel">
-				<div style=" float:left;">
-					<a href="#" target="_blank">
-						<img src="../images/bolg.jpg" border="0" />
-					</a>
-				</div>
-				<div style=" float:left;">
-					<a href="#" target="_blank">
-						<img src="../images/weibo.jpg" border="0" />
-					</a>
-				</div>
-				<div class="sitetel" style="margin-top:2px;">
-					<a href="#" target="_blank" style="color:#333333;">免费咨询</a>
-					<i></i>
-					<a href="#" target="_blank" style="color:#f7941e; font-weight: 700">800-888-8888</a>
-				</div>
-				<div class="enlink" style="margin-left:15px;">
-					<a href="#" target="_blank">
-						<img src="../images/en.jpg" />
-					</a>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="navlogo">
-				<div style="float:left;">
-					<a href="index..">
-						<img src="../images/logo-test1.gif" />
-					</a>
-				</div>
-				<div style="float:right;">
-					<img src="../images/logo-test2.gif" />
-				</div>
-			</div>
-		</div>
-
-		<div class="navmenu">
-			<div class="homeico"><a href="index.."><img src="../images/home.png" width="16" height="14" /></a></div>
-			<div class="menuItem" onmouseover="MM_Layers('over','Layer1');" onmouseout="MM_Layers('out','Layer1');"><a href="product..">关于我们</a></div>
-			<div class="menuItem" onmouseover="MM_Layers('over','Layer2');" onmouseout="MM_Layers('out','Layer2');"><a href="javascript:void(0)" data-id="productlistbtn">产品目录</a></div>
-			<div class="menuItem" onmouseover="MM_Layers('over','Layer3');" onmouseout="MM_Layers('out','Layer3');"><a href="application..">应用领域</a></div>
-			<div class="menuItem" onmouseover="MM_Layers('over','Layer4');" onmouseout="MM_Layers('out','Layer4');"><a href="marketing..">营销&amp;服务</a></div>
-			<div class="menuItem" ><a href="development..">技术问答</a></div>
-			<div class="menuItem" ><a href="news..">新闻&amp;媒体</a></div>
-			<div class="menuItem" ><a href="hr..">人力资源</a></div>
-			<div class="searchinput" >
-				<input id="k" name="k" maxlength="10" class="textStyle" />
-			</div>
-			<div class="searchbtn">
-				<input type="image" src="../images/search.jpg"/>
-			</div>
-			<div class="login">
-				<a data-id="loginbtn" href="#">
-					<button class="submit">登录</button>
-				</a>					
-			</div>
-			<div class="register">
-				<a data-id="registerbtn" href="#">注册新用户</a>
-			</div>			
-		</div>
-		<table width="1080" height="0" border="0" align="center" cellpadding="0" cellspacing="0">
-			<tr>
-				<td width="50"></td>
-				<td width="68">
-					<div class="subMenuInit" id="Layer1" onmouseover="MM_Layers('over','Layer1');" onmouseout="MM_Layers('out','Layer1');">
-						<div class="subMenuApp">
-							<ul>
-								<li><a href="#">公司概况</a></li>
-								<li><a href="#">发展历程</a></li>
-								<li><a href="#">资质荣誉</a></li>
-								<li><a href="#">合作伙伴</a></li>
-								<li><a href="#">联系我们</a></li>
-							</ul>
-						</div>
-					</div>
-				</td>
-				<td width="73">
-					<div class="subMenuPro" id="Layer2" onmouseover="MM_Layers('over','Layer2');" onmouseout="MM_Layers('out','Layer2');">
-						<div class="proItem">
-							<a href="../front/manage.html"><img src="../images/nut.jpg"
-								width="153" height="146" /></a>
-						</div>
-						<div class="proItem">
-							<a href="productlist..?tid=2"><img
-								src="../images/screw.jpg" width="153" height="146" /></a>
-						</div>
-						<div class="proItem">
-							<a href="productlist..?tid=3"><img src="../images/spacer.jpg"
-								width="153" height="146" /></a>
-						</div>
-						<div class="proItem">
-							<a href="productlist..?tid=4"><img src="../images/nutclip.jpg"
-								width="153" height="146" /></a>
-						</div>
-					</div>
-				</td>
-				<td width="80">
-					<div class="subMenuInit" id="Layer3"
-						onmouseover="MM_Layers('over','Layer3');"
-						onmouseout="MM_Layers('out','Layer3');">
-						<div class="subMenuApp">
-							<ul>
-								<li><a href="#">汽车工业</a></li>
-								<li><a href="#">铁路机车</a></li>
-								<li><a href="#">医疗器械</a></li>
-								<li><a href="#">工程装备</a></li>
-								<li><a href="#">电子设备</a></li>
-								<li><a href="#">石油化工</a></li>
-								<li><a href="#">航空航天</a></li>
-								<li><a href="#">船舶港口</a></li>
-							</ul>
-						</div>
-					</div>
-				</td>
-				<td ></td>
-			</tr>
-		</table>
-		
-		<div class="contentPane">
-				<script src="../js/slide.js"></script>
-				<div class="demobackground">
-					<div id="demo3" class="slideBox">
-						<ul class="items">
-						<li><a href="#" title="这里是标题一"><img src="../images/1.jpg"></a></li>
-						<li><a href="#" title="这里是标题二"><img src="../images/2.jpg"></a></li>
-						<li><a href="#" title="这里是标题三"><img src="../images/3.jpg"></a></li>
-						<li><a href="#" title="这里是标题四"><img src="../images/4.jpg"></a></li>
-						<li><a href="#" title="这里是标题五"><img src="../images/5.jpg"></a></li>
-						</ul>
-					</div>
-				</div>
-				<table width="1080" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#E7E7E9">
-						<tr>
-							<td width="75" style="border-right:1px solid #fff;" class="fcGray" height="36" align="center">新闻</td>
-							<td width="64" align="right">
-								<a href="javascript:void(0)" id="btn2">
-									<img src="../images/left.jpg" />
-								</a>
-								<a href="javascript:void(0)" id="btn1">
-									<img src="../images/right.jpg" />
-								</a>
-							</td>
-							<td style="padding-left:10px;">
-								<div id="scrollDiv">
-									<ul>
-					
-										<li>
-											<a href="#">2017-08-16 - 热烈祝贺xxx公司获得xxx产业博览会创新奖</a>
-										</li>
-					
-										<li>
-											<a href="#">2017-06-08 - xxx诉xxxxxx不正当竞争纠纷案</a>
-										</li>
-					
-										<li>
-											<a href="#">2017-03-22 - xxxxxxxxxxxxx有限公司荣获江苏省科技型中小企业的称号</a>
-										</li>
-					
-										<li>
-											<a href="#">2016-10-12 - 汽车紧固件的开发、应用和成本分析</a>
-										</li>
-					
-										<li>
-											<a href="#">2016-10-12 - 上海分公司重点项目陆续进驻</a>
-										</li>
-					
-									</ul>
-								</div>
-							</td>
-							<td width="74">
-								<a href="#">>>更多新闻</a>
-							</td>
-						</tr>
-				</table>
-				<table width="1080" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:14px;">
-							<tr>
-								<td width="400" valign="top">	
-									<div class="moduleImg">
-										<img src="../images/2012730263473499.jpg" width="303" height="108" />
-									</div>
-									<div class="module">
-										<div class="moduleTitle">Lock&Lock
-											<sup>®</sup>在中国</div>
-										<div class="moduleDesc">
-											<a href="#">我们将与合作伙伴及用户一起，在中国建设未来！
-												<br>助力中国工业从细微处提高品质，走向世界。
-												<br>发展目标：成为一流的螺纹防松紧固件厂商。</a>
-										</div>
-										<div class="moduleMore">
-											<a href="#">查看 》</a>
-										</div>
-									</div>	
-								</td>
-								<td width="400" valign="top">
-									<div class="moduleImg">
-										<img src="../images/20128718305173499.jpg" width="303" height="108" />
-									</div>
-									<div class="module">
-										<div class="moduleTitle">为何选择Lock&Lock
-											<sup>®</sup>
-										</div>
-										<div class="moduleDesc" style="margin:9px 25px 0 14px">
-											<a href="technology.">Lock®是一种拥有独特螺纹结构设计的自锁型螺纹技术。它具有优良的预制连接件的横向振动的能力，
-												从而从根本上预制和解决螺纹松动脱落的问题。现在，Lock®技术成为螺纹防止松动的高可靠性技术代表被写进机械设计手册。
-											</a>
-										</div>
-										<div class="moduleMore">
-											<a href="technology..">查看 》</a>
-										</div>
-									</div>	
-								</td>
-								<td valign="top">
-									<div class="moduleImg">
-										<img src="../images/201291311142873499.jpg" width="303" height="108" />
-									</div>
-									<div class="module">
-										<div class="moduleTitle" style="color:#f4921d;">使用Lock&Lock
-											<sup>®</sup>防松螺母，确保安全紧固</div>
-										<div class="moduleDesc" style="margin:9px 20px 0 14px">
-											<a href="product..">Lock&Lock
-												<sup>®</sup>防松螺母
-												<br>Lock&Lock
-												<sup>®</sup>连结副
-												<br>Lock&Lock
-												<sup>®</sup>工具系列
-												<br>Lock&Lock
-												<sup>®</sup>压铆镶嵌</a>
-										</div>
-										<div class="moduleMore">
-											<a href="product..">查看 》</a>
-										</div>
-									</div>
-								</td>
-							</tr>
-				</table>
-		</div>
-
-		<div class="navModule">
-			<div class="divider"></div>
-			<div class="navSubModule">
-				<div class="navTitle">关于我们</div>
-				<ul class="navSubTitle">
-					<li>
-						<a href="#">公司概况</a>
-					</li>
-		
-					<li>
-						<a href="#">资质荣誉</a>
-					</li>
-		
-					<li>
-						<a href="#">发展历程</a>
-					</li>
-		
-					<li>
-						<a href="#">合作伙伴</a>
-					</li>
-		
-					<li>
-						<a href="#">上海乐扣</a>
-					</li>
-		
-					<li>
-						<a href="#">联系我们</a>
-					</li>
-				</ul>
-			</div>
-			<div class="navSubModule">
-				<div class="navTitle">技术研发</div>
-				<ul class="navSubTitle">
-					<li>
-						<a href="#">基础研究</a>
-					</li>
-		
-					<li>
-						<a href="#">技术演进</a>
-					</li>
-		
-					<li>
-						<a href="#">航空航天</a>
-					</li>
-		
-					<li>
-						<a href="#">医疗器械</a>
-					</li>
-				</ul>
-			</div>
-			<div class="navSubModule">
-				<div class="navTitle">产品</div>
-				<ul class="navSubTitle">
-					<li>
-						<a href="#">Lock&Lock
-							<sup>®</sup>防松螺母</a>
-					</li>
-					<li>
-						<a href="#">Lock&Lock
-							<sup>®</sup>联结副</a>
-					</li>
-					<li>
-						<a href="#">Lock&Lock
-							<sup>®</sup>工具系列</a>
-					</li>
-				</ul>
-			</div>
-				<div class="navSubModule">
-					<div class="navTitle">应用领域</div>
-					<ul class="navSubTitle">
-		
-						<li>
-							<a href="#">汽车工业</a>
-						</li>
-		
-						<li>
-							<a href="#">柴油机</a>
-						</li>
-		
-						<li>
-							<a href="#">工程机械</a>
-						</li>
-		
-						<li>
-							<a href="#">港口机械</a>
-						</li>
-		
-						<li>
-							<a href="#">铁路系统和轨道交通</a>
-						</li>
-		
-						<li>
-							<a href="#">磁悬浮轨道钢梁</a>
-						</li>
-		
-						<li>
-							<a href="#">医疗器械</a>
-						</li>
-		
-						<li>
-							<a href="#">航空航天</a>
-						</li>
-		
-						<li>
-							<a href="#">石油机械</a>
-						</li>
-		
-						<li>
-							<a href="#">新能源汽车</a>
-						</li>
-		
-					</ul>
-				</div>
-				<div class="navSubModule">
-					<div class="navTitle">营销&amp;服务</div>
-					<ul class="navSubTitle">
-		
-						<li>
-							<a href="#">代理商</a>
-						</li>
-		
-					</ul>
-				</div>
-				<div class="navSubModule">
-					<div class="navTitle">技术问答</div>
-					<ul class="navSubTitle">
-		
-						<li>
-							<a href="#">Lock&Lock问答</a>
-						</li>
-		
-					</ul>
-				</div>
-				<div class="navSubModule">
-					<div class="navTitle">新闻&amp;媒体</div>
-					<ul class="navSubTitle">
-						<li>
-							<a href="#">企业新闻</a>
-						</li>
-						<li>
-							<a href="#">行业动态</a>
-						</li>
-						<li>
-							<a href="#">媒体报道</a>
-						</li>
-					</ul>
-				</div>
-				<div class="navSubModule">
-					<div class="navTitle">人力资源</div>
-					<ul class="navSubTitle">
-		
-						<li>
-							<a href="#">人才理念</a>
-						</li>
-		
-						<li>
-							<a href="#">招聘</a>
-						</li>
-		
-						<li>
-							<a href="#">员工文化</a>
-						</li>
-		
-					</ul>
-				</div>
-		</div>
-		<div class="bottom">
-			<table border="0" width="100%">
-				<tbody>
-					<tr>
-						<td style="line-height:20px;text-align:center;">
-							沪ICP备11026724号&nbsp;|&nbsp;
-							<a href="#" target="_blank">索取产品手册</a>
-						</td>
-					</tr>
-					<tr>
-						<td style="line-height:20px;text-align:center;">
-							Copyright&nbsp;&copy;&nbsp;2001 - 2015&nbsp;Lock&Lock(中国)有限公司&nbsp;DTFLOCK(China)Co.,Ltd.&nbsp;版权所有</td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">
-							<img src="../images/1531573973.png" title="微信，关注我们吧！" />&nbsp;&nbsp;;&nbsp;;&nbsp;;&nbsp;;&nbsp;;&nbsp;
-							<img src="../images/1531573856.png" title="支付宝企业账户" />
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</body>
+      </div>
+    </footer>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
 </html>
