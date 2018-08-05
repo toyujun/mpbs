@@ -20,26 +20,15 @@ Manufature company index with product browser web system
 │   ├── fonts          # 图标字体
 │   ├── front              # 前端页面
 │   ├── images               # 图片
-│   ├── js              # 前端页面
-│   ├── json              # 前端页面
-│   ├── META-INF              # 前端页面
-│   ├── WEB-INF              # 前端页面
-│   │   ├── favicon.ico         # 路由配置文件
-│   │   ├── index.jsp             # 主页跳转
-│   │   ├── panelscrew_m6x16.stl  # stl格式的演示产品模型
-│   │   ├── validatecode.jsp      # 生成验证码
-│   │   └── Login            # 功能模块
-│   │       ├── index.js     # 路由配置文件
-│   │       ├── assets       # 单独属于这个模块的静态资源文件
-│   │       ├── components   # 页面组件
-│   │       ├── model        # dva model
-│   │       ├── service      # dva service
-│   │       └── routes **    # 子路由(目录结构与父级相同)
-│   ├── utils                # 工具类
-│   └── assets               # 资源文件
-│           ├── fonts        # 字体 & 字体图标
-│           ├── images       # 图片
-│           └── styles   
+│   ├── js              # js文件
+│   ├── json              # 表格数据
+│   ├── META-INF              
+│   ├── WEB-INF              
+│   ├── favicon.ico         # 路由配置文件
+│   ├── index.jsp             # 主页跳转
+│   ├── panelscrew_m6x16.stl  # stl格式的演示产品模型
+│   ├── validatecode.jsp      # 生成登录验证码
+│   └── utils                # 工具类
 ```
 
 Some captures:
