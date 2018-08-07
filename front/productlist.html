@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>产品列表</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Lock&Lock 产品列表</title>      
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/mplbs_index.css" />
+    <link rel="stylesheet" href="../css/product.css"/>
 
-    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
-    <link rel="stylesheet" href="../css/base.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/three.js"></script>
     <script src="../js/STLLoader.js"></script>
     <script src="../js/TrackballControls.js"></script>
@@ -71,21 +76,20 @@
     }
 
     function tohtml(jdata) {          /* 拼接表格数据的html */
-        $(".contentTab").empty();
+        $(".product_table").empty();
         var res = eval(jdata);
         var items = res.rows;          //jason数组中取要显示的表格数据
         var firstResult = (currentPage - 1) * pageSize;
         totalPage = Math.ceil(res.total / pageSize);   //计算总页数
         var content = '';
-        content += '<table id="generatedTable"><tr><th>序号</th><th>BN - 标准</th><th>描述</th><th>材质</th><th>强度等级</th><th>表面处理</th><th>图纸</th></tr>';
+        content += '<tr><th width=50px>序号</th><th width=160px>BN - 标准</th><th>描述</th><th width=120px>材质</th><th width=160px>强度等级</th><th width=160px>表面处理</th><th width=60px>图纸</th></tr>';
         for (var i = firstResult; i < firstResult+pageSize; i++) {
             content += '<tr><td>' + (i+1) + '</td><td>' + items[i].bnstandard +
                 '</td><td>' + items[i].descb + '</td><td>' + items[i].material + '</td><td>' + items[i].hardness +
                 '</td><td>' + items[i].surface + '</td><td>' + '<a class="cadview" data-type="" href="javascript:view3d();" data-url="1111111">' +
                 '<img alt="" id="ImageCADViewer" src="../images/cad_icon.gif" title="' + items[i].drawing + '" /></a>' + '</td></tr>';
         }
-        content += '</table>';
-        $(".contentTab").append(content);
+        $(".product_table").append(content);
         $("#pageState").html(currentPage + '/' + totalPage);
     };
 
@@ -106,37 +110,195 @@
 </script>
 
 <body>
-	<div class="productLeftNav">
-        <div class="leftNav">
-            产品列表
-        </div>
-        <div class="leftNavList">
-            <ul>
-                <li><a>防松螺母</a></li>
-                <li><a>防松螺钉</a></li>
-                <li><a>防松垫圈</a></li>
-                <li><a>防松铆钉</a></li>
-            </ul>
-        </div>
-	</div>
-    <div class="pager">
-        <a href="javascript:first()" id="firstPage">首页</a>
-        <a href="javascript:before()" id="previousPage">上一页</a>
-        <span>当前</span>
-        <sapn id="pageState"></sapn>
-        <span>页</span>
-        <a href="javascript:next()" id="nextPage">下一页</a>
-        <a href="javascript:last()" id="lastPage">尾页</a>
+    <!--最顶部块-->
+    <div class="navtop hidden-xs hidden-sm">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <a href="javascript:;" class="mp_code">
+                    <img src="../images/weixin.png">
+                    <span>官方微信</span>
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                    <img class="scanimg" src="../images/1531573973.png" >
+                    </a>&nbsp;
+                    <a href="javascript:;" class="mp_code">
+                        <img src="../images/weibo.png">
+                        <span>官方微博</span>
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                        <img class="scanimg" src="../images/1531573973.png">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:;" class="nav-dail">
+                    <span>免费咨询</span>
+                    <span class="glyphicon glyphicon-phone-alt"></span>
+                    <span>800800800</span>&nbsp;
+                    <img src="../images/en.jpg">
+                    </a>
+                </div>
+                </div>
+            </div>
+            </div>
+    <!--LOGO-->
+    <div class="navlogo">
+    <div class="navlogoL">
+        <a href="index..">
+        <img src="../images/logo-test1.gif" />
+        </a>
     </div>
+    <div class="navlogoR">
+        <img src="../images/logo-test2.gif" />
+    </div>
+    </div>
+    <!--导航条-->
+    <nav class="navbar navbar-default mp_nav">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html">
+                <span class="glyphicon glyphicon-home"></span> 
+            </a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">关于我们<span class="sr-only">(current)</span></a>
+                <div class="subMenuApp">
+                    <ul>
+                    <li><a href="#">公司概况</a></li>
+                    <li><a href="#">发展历程</a></li>
+                    <li><a href="#">资质荣誉</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                </li>
+                <li class="active"><a href="productlist.html"><sapn>产品目录</sapn></a>
+                <div class="subMenuApp2" id="Layer2">
+                    <div class="proItem">
+                        <a href="../front/manage.html"><img src="../images/nut.jpg"
+                        width="153" height="146" /></a>
+                    </div>
+                    <div class="proItem">
+                        <a href="productlist..?tid=2"><img
+                        src="../images/screw.jpg" width="153" height="146" /></a>
+                    </div>
+                    <div class="proItem">
+                        <a href="productlist..?tid=3"><img src="../images/spacer.jpg"
+                        width="153" height="146" /></a>
+                    </div>
+                    <div class="proItem">
+                        <a href="productlist..?tid=4"><img src="../images/nutclip.jpg"
+                        width="153" height="146" /></a>
+                    </div>
+                </div>
+                </li>
+                <li><a href="#">应用领域</a>
+                <div class="subMenuApp">
+                    <ul>
+                        <li><a href="#">汽车工业</a></li>
+                        <li><a href="#">铁路机车</a></li>
+                        <li><a href="#">医疗器械</a></li>
+                        <li><a href="#">工程装备</a></li>
+                        <li><a href="#">电子设备</a></li>
+                        <li><a href="#">石油化工</a></li>
+                        <li><a href="#">航空航天</a></li>
+                        <li><a href="#">船舶港口</a></li>
+                    </ul>
+                    </div>
+                </li>  
+                <li><a href="#">营销&服务</a></li>
+                <li><a href="#">技术问答</a></li> 
+                <li><a href="#">新闻&媒体</a></li> 
+                <li><a href="#">人力资源</a></li>                   
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <a href="./login.html"><button type="button" class="btn btn-default">登录</button></a>
+                &nbsp<a href="#">新用户注册</a>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <!--产品列表导航-->
+                <div class="productLeftNav">
+                    <div class="leftNav">产品列表</div>
+                    <div class="leftNavList">
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:first()">防松螺母</a>
+                            </li>
+                            <li>
+                                <a href="javascript:first()">防松螺钉</a>
+                            </li>
+                            <li>
+                                <a href="javascript:first()">防松垫圈</a>
+                            </li>
+                            <li>
+                                <a href="javascript:first()">防松铆钉</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+             <!--产品翻页-->
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li><a href="javascript:first()">首页</a></li>
+                        <li><a href="javascript:before()">上一页</a></li>
+                        <li>当前第<sapn id="pageState"></sapn>页</li>
+                        <li><a href="javascript:next()">下一页</a></li>
+                        <li><a href="javascript:last()">尾页</a></li>
+                    </ul>
+                </nav>
+                <!--产品明细表格-->
+                <table class="table table-bordered product_table"></table>                                           
+            </div>
+        </div>
+    </div> 
+    <!--3d预览窗口-->
     <div id="light" class="white_content">
         <div class="viewclose">
             <a href="javascript:closeview()">关闭</a>
         </div>
         <div class="viewbox"></div>
     </div>
-    <div id="fade" class="black_overlay"></div>
-
-    <div class="contentTab"></div>
+    <div id="fade" class="black_overlay"></div>    
+    <!-- Footer -->
+    <footer class="mp_customer">
+        <div class="footcontainer">
+            <h3>合作伙伴</h3>
+            <ul>
+            <li><a href="javascript:;"><img src="../images/customer1.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer2.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer3.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer4.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer5.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer6.jpeg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer7.jpg"/></a></li>
+            <li><a href="javascript:;"><img src="../images/customer8.jpeg"/></a></li>
+            </ul>
+        </div>
+    </footer>    
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,295 @@
+/*-----全局定义-----*/
+body {
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  text-decoration: none;
+  color: #f7941e;
+}
+li {
+  list-style: none;
+}
+/*-----定义变量-----*/
+/*-----最顶部块-----*/
+.navtop {
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+}
+.navtop .row {
+  height: 100%;
+  text-align: center;
+}
+.navtop .row .mp_code {
+  position: relative;
+  display: inline-block;
+}
+.navtop .row .mp_code > img:last-of-type {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+.navtop .row .mp_code:hover > img:last-of-type {
+  display: block;
+}
+.navtop .row .nav-dail {
+  display: block;
+  height: 36px;
+}
+.navtop .row .nav-dail .glyphicon-phone-alt {
+  color: #f7941e;
+}
+.navtop .row .nav-dail > img {
+  vertical-align: top;
+  margin-left: 30px;
+}
+.navtop .row .nav-dail > span:last-of-type {
+  color: #f7941e;
+}
+.navlogo {
+  height: 70px;
+  position: relative;
+}
+.navlogo .navlogoL {
+  width: 500px;
+  float: left;
+  margin-left: 275px;
+}
+.navlogo .navlogoR {
+  width: 200px;
+  float: right;
+  margin-right: 365px;
+}
+/*-----导航条-----*/
+.mp_nav {
+  margin-bottom: 10px;
+}
+.mp_nav .navbar-brand {
+  color: #AAAAAA;
+}
+.mp_nav .navbar-brand:hover {
+  color: #f7941e;
+}
+.mp_nav .navbar-nav > li > a {
+  font-size: 14px;
+}
+.mp_nav .navbar-nav > li > a:hover {
+  border-bottom: solid 3px #f7941e;
+}
+.mp_nav .navbar-nav > li:hover > .subMenuApp {
+  display: block;
+}
+.mp_nav .navbar-nav > li:hover > .subMenuApp2 {
+  display: block;
+}
+.mp_nav .navbar-nav > li.active > a {
+  border-bottom: 3px solid #f7941e;
+}
+.mp_nav .navbar-form {
+  margin: 16px auto auto 18px;
+}
+.mp_nav .navbar-form .form-group > input {
+  height: 22px;
+  padding: 0 0 0 6px;
+}
+.mp_nav .navbar-form > button {
+  background-color: #f7941e;
+  height: 22px;
+  width: 36px;
+  padding: 0 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.mp_nav .navbar-right {
+  padding: 12px 10px;
+}
+.mp_nav .navbar-right > button {
+  width: 36px;
+  font-size: 12px;
+  padding: 0 0;
+  background-color: #f7941e;
+  height: 22px;
+}
+.mp_nav .navbar-right > a {
+  font-size: 12px;
+}
+/*-----浮动二级菜单-----*/
+.subMenuApp {
+  display: none;
+  width: 187px;
+  border-bottom: 1px solid #e3e4e5;
+  position: absolute;
+  z-index: 10;
+  margin-top: 1px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px #AAAAAA;
+}
+.subMenuApp > ul {
+  padding-left: 14px;
+  font-size: 13px;
+}
+.subMenuApp > ul > li {
+  height: 28px;
+}
+.subMenuApp2 {
+  display: none;
+  width: 620px;
+  border-bottom: 1px solid #e3e4e5;
+  margin-top: 1px;
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px #AAAAAA;
+}
+.subMenuApp2 > .proItem {
+  width: 153px;
+  height: 146px;
+  float: left;
+  border: 1px solid #C3C1B5;
+}
+/*-----轮播图-----*/
+.slide {
+  width: 1000px;
+  height: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide .carousel-inner {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide .pcImg {
+  width: 100%;
+  height: 350px;
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/*-----业务介绍-----*/
+.mp_advantage {
+  padding-top: 20px;
+  width: 1230px;
+}
+.mp_advantage .advanBox {
+  width: 302px;
+  height: 270px;
+  box-shadow: 0px -1px 1px #ddd inset;
+  margin: 0 auto;
+}
+.mp_advantage .advanBox .topImg {
+  margin-bottom: 10px;
+}
+.mp_advantage .advanBox .bottomText {
+  margin-left: 5px;
+}
+.mp_advantage .advanBox .bottomText > P:first-of-type {
+  font-size: 14px;
+}
+.mp_advantage .advanBox .bottomText > p:last-of-type {
+  text-align: left;
+  font-size: 13px;
+  line-height: 20px;
+}
+.mp_advantage .advanBox .bottomText > a {
+  display: block;
+  height: 20px;
+  width: 45px;
+  position: absolute;
+  bottom: 20px;
+  right: 75px;
+  font-size: 13px;
+  color: #f7941e;
+}
+/*-----新闻-----*/
+.mp_news {
+  padding: 20px;
+  /*添加虚线*/
+  /*新闻导航图标*/
+  /*新闻显示*/
+}
+.mp_news .mp_nTitle {
+  line-height: 50px;
+  font-size: 25px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.mp_news .mp_newLine {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  border-left: 1px dashed #f7941e;
+  left: 40px;
+}
+.mp_news .nav-tabs {
+  border-bottom: none;
+}
+.mp_news .nav-tabs > li {
+  margin-bottom: 50px;
+}
+.mp_news .nav-tabs > li > a {
+  background-color: #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  padding-left: 7px;
+  padding-top: 7px;
+}
+.mp_news .nav-tabs > li > a:hover {
+  background-color: #f7941e;
+  border: none;
+}
+.mp_news .nav-tabs > li.active > a,
+.mp_news .nav-tabs > li.active a:hover,
+.mp_news .nav-tabs > li.active a:focus {
+  border: none;
+  background-color: #f7941e;
+}
+.mp_news .nav-tabs > li .glyphicon {
+  font-size: 36px;
+  color: #fff;
+}
+.mp_news .nav-tabs > li:last-of-type {
+  margin-bottom: 0px;
+}
+.mp_news .mp_newsList > li {
+  line-height: 60px;
+  font-size: 14px;
+}
+/*-----客户列表-----*/
+.mp_customer {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+.mp_customer .footcontainer {
+  width: 1140px;
+  margin: 0 auto;
+}
+.mp_customer .footcontainer h3 {
+  font-size: 25px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+}
+.mp_customer .footcontainer ul {
+  padding-left: 0;
+  display: inline-block;
+}
+.mp_customer .footcontainer ul li {
+  margin: auto 40px;
+  float: left;
+  height: 55px;
+  line-height: 55px;
+}

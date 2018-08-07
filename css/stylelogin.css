@@ -1,28 +1,6 @@
-﻿body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
-.main{ margin:0 auto; width:960px; overflow:hidden;}
-.mainin{ margin:0 auto; width:381px; overflow:hidden; clear:both; }
-.mainin h1{font-size:28px;color:#f7941e; float:left; width:100%; height:30px; text-align:center;margin-top:20px;}
-.mainin1{ float:left; width:381px; height:400px; background:#dcebf4 no-repeat;}
-
-.mainin1 ul{ float:left; padding:10px 25px 0px; overflow:hidden; width:331px;}
-.mainin1 ul li{ float:left; width:100%; overflow:hidden;/* 防止外边距合并 */ padding-bottom:10px;}
-.mainin1 ul li span, .mainin1 ul li input{ float:left; font-size:16px; }
-
-
-#checkcode {float:left; width: 30%; margin-right:30px;}
-.mainin1 ul li span{ width:100%; clear:both; color:#6f6f6f; font-family:"Microsoft YaHei"; font-size:14px; line-height:37px;}
-.mainin2 ul li span{ width:100%; clear:both; color:#ffffff; font-family:"Microsoft YaHei"; font-size:18px; line-height:37px;}
-
-.mainin1 ul:nth-child(6){width:381px; height:20px;}
-.errorMessage li {float:left; width:331px; height:30px; font: bold 20px; color: red; text-align: center; }
-.SearchKeyword {border:1px solid #c8c8c8;width: 202px;color: #999;font-size:12px; line-height:35px; background:url(../images/srbg.png) no-repeat; height:35px; width:317px; padding-left:10px;}
-.SearchKeyword2 {border:1px solid #c8c8c8;width: 202px;color: #999;font-size:12px; line-height:35px; background:url(../images/srbg.png) no-repeat; height:35px; width:317px; padding-left:10px;}
-@media screen and (-webkit-min-device-pixel-ratio:0){.SearchKeyword2 {border:1px solid #c8c8c8;width: 202px;color: #999;line-height:35px; background:url(../images/srbg.png) no-repeat; height:35px; width:317px; padding-left:10px;}}
-.SearchKeywordonFocus, .SearchKeywordonFocus2{border:1px solid #3c9ae9;width: 202px;line-height:35px;color: #333;font-size:14px; background:url(../images/srbg2.png) no-repeat; height:35px; width:317px; padding-left:10px;}
-.SearchKeywordonFocus2{}
-@media screen and (-webkit-min-device-pixel-ratio:0){.SearchKeywordonFocus2{ font-size:25px;}}
-.tijiao{ float:left; height:42px; margin:0 0 0 80px; width:160px; background:none; border:none; background:url(../images/dl.png) no-repeat; font-weight:bold; text-align:center; color:#fff; font-size:20px;font-family:"Microsoft YaHei"; cursor:pointer;}
-
-.cssModify{}
-.cssModify a{font-size:12px;color:#ccc; letter-spacing:1px;}
-.cssModify a:hover{color:#333;}
+﻿.loginForm{
+	padding-top: 15px;
+}
+.loginForm img{
+	margin-top: 22px;
+}
